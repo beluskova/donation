@@ -1,0 +1,8 @@
+User(homer):
+    usCitizen: true
+    firstName: Homer
+    lastName: Simpson
+    email: homer@simpson.com
+    password: secret
+ 
+#father, main character

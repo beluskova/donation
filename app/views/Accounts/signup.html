@@ -1,0 +1,42 @@
+#{extends 'main.html' /} #{set title:'Signup for Donation' /}
+
+<nav class="ui menu">
+	<a class="ui item" href="/home">Home</a> 
+	<a class="ui active item" href="/signup">Sign Up</a> 
+	<a class="ui item" href="/login">Log In</a>
+	<a class="ui item" href="/logout">Sign Out</a>
+</nav>
+
+
+<section class="ui form segment">
+	<form action="/register" method="POST">
+  <div class="inline field">
+  <div class="ui checkbox">
+    <input name="usCitizen" type="checkbox">
+    <label>Tick to confirm you are a citizen of the USA</label>
+  </div>
+  </div>
+
+		<div class="two fields">
+			<div class="required field">
+				<label>First Name</label> <input placeholder="First Name"
+					type="text" name="firstName">
+			</div>
+			<div class="field">
+				<label>Last Name</label> <input placeholder="Last Name" type="text"
+					name="lastName">
+			</div>
+		</div>
+		<div class="required field">
+			<label>Email</label> <input placeholder="Email" type="text"
+				name="email">
+		</div>
+		<div class="required field">
+			<label>Password</label> <input type="Password" name="password">
+		</div>
+		<h2 class="ui red tiny header"> Fields marked with * are mandatory </h2>
+<button class="ui blue submit button">Submit</button>
+</form>
+</section>
+
+
