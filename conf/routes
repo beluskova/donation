@@ -12,7 +12,7 @@ GET    /login                                   Accounts.login
 GET    /logout                                  Accounts.logout
 POST   /authenticate                            Accounts.authenticate
 POST   /register                                Accounts.register
-
+			
 #Donation page
 GET     /donation                               DonationController.index
 POST    /donation/donate                        DonationController.donate

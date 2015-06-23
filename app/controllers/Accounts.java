@@ -34,12 +34,12 @@ public class Accounts extends Controller
     	      else
     	        if (password != null && password.length() == 0 || password == "")
     	        {
-    	          Logger.info("No pasword provided, user not registered");
+    	          Logger.info("No password provided, user not registered");
     	          Accounts.index();
     	        }
     	        else
     	        {
-    	          Logger.info(firstName + " " + lastName + " " + email + " " + password + " " );
+    	          Logger.info(usCitizen+ " " + firstName + " " + lastName + " " + email + " " + password + " " );
     	          User user = new User(usCitizen, firstName, lastName, email, password);
     	          user.save();
     	          Logger.info("Registration successful");
@@ -59,9 +59,9 @@ public class Accounts extends Controller
     	Welcome.index();
     }
     
-	public boolean usCitizen()
+/*public boolean usCitizen()
 	{
-		if (usCitizen ())
+		if (usCitizen() == true)
 		{
 		return true;
 		}
@@ -69,7 +69,7 @@ public class Accounts extends Controller
 		{
 			return false;
 		}
-	}
+	}*/
  
     public static void authenticate(String email, String password)
       {

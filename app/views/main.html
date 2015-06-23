@@ -4,15 +4,22 @@
         <title>#{get 'title' /}</title>
         <meta charset="${_response_encoding}">
     
-   <!--  <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">   -->
+
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
-        <link rel="stylesheet" media="screen" href="@{'/public/semantic/semantic.min.css'}">  
+        <link rel="stylesheet" media="screen" href="@{'/public/semantic/semantic.min.css'}"> 
+        <script src="@{'/public/javascripts/jquery-2.1.1.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/semantic/semantic.js'}" type="text/javascript" charset="${_response_encoding}"></script> 
+ 
     </head>
     <body>
+
         #{doLayout /}
         
-        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
+                   <script>
+        $('.ui.checkbox').checkbox('usCitizen', true, false);
+        </script>    
+
     </body>
 </html>
