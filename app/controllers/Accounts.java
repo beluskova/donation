@@ -59,17 +59,6 @@ public class Accounts extends Controller
     	Welcome.index();
     }
     
-/*public boolean usCitizen()
-	{
-		if (usCitizen() == true)
-		{
-		return true;
-		}
-		else
-		{
-			return false;
-		}
-	}*/
  
     public static void authenticate(String email, String password)
       {
