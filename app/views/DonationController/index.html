@@ -9,12 +9,9 @@
 
 <div class="ui segment">
 	<h1 class="ui header">Welcome ${user.firstName}</h1>
-	<p>
-		<b> Please give generously 
-	</p>
-	</b>
+	<p> <b> Please give generously </p> </b>
 
-	<form action="/donation/donate" method="POST">
+	<form action="/donation/donate" method="POST" class="ui form segment">
 		<div class="ui two column segment">
 			<div class="ui column">
 				<p>Select an amount:</p>
@@ -48,7 +45,10 @@
 			</div>
 			</div>
 			<button class="ui button">Donate</button>
-			<!-- <div class="ui error message"></div> -->
+			<div class="ui error message"></div>
 	</form>
+
+	
+	
 </div>
 <script src="@{'/public/javascripts/donate.js'}"></script>

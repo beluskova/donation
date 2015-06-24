@@ -16,6 +16,9 @@ public class DonationController extends Controller
         if (user != null)
         {
         	Logger.info("Donation controller: user is " + user.email);
+        	
+        	List<Donation> donations = Donation.findAll();
+        	
         	render (user);
         }
         else
@@ -31,6 +34,7 @@ public class DonationController extends Controller
     	User user = User.findById(Long.parseLong(userId));
         if (user != null)
         {
+        	
         	addDonation (user, amountDonated, methodDonated);
         	Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
         	index();
