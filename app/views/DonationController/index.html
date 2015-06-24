@@ -1,14 +1,54 @@
-
-#{extends 'main.html' /} #{set title:'Donation homepage' /}
+ #{extends 'main.html' /} #{set title:'Donation homepage' /}
 
 <nav class="ui menu">
-	<a class="ui item" href="/home">Home</a> 
-	<a class="ui item" href="/signup">Sign Up</a> 
-	<a class="ui item" href="/login">Log In</a>
-	<a class="ui active item" href="/donation">Make Donation</a>
-	<a class="ui item" href="/logout">Sign Out</a>
+	<a class="ui item" href="/home">Home</a> <a class="ui item"
+		href="/signup">Sign Up</a> <a class="ui item" href="/login">Log In</a>
+	<a class="ui active item" href="/donation">Make Donation</a> <a
+		class="ui item" href="/logout">Sign Out</a>
 </nav>
 
 <div class="ui segment">
-<h1 class="ui header">Welcome</h1>
-<p> <b> Please give generously </p> </b>
+	<h1 class="ui header">Welcome ${user.firstName}</h1>
+	<p>
+		<b> Please give generously 
+	</p>
+	</b>
+
+	<form action="/donation/donate" method="POST">
+		<div class="ui two column segment">
+			<div class="ui column">
+				<p>Select an amount:</p>
+
+		    <div class="ui selection dropdown">
+		      <input name="amountDonated" type="hidden">
+		      <i class="dropdown icon"></i>
+		       <div class="default text"> Amount </div>
+		      <div class="menu">
+		        <div class="item" data-value="100">$100</div>
+		        <div class="item" data-value="500">$500</div>
+		        <div class="item" data-value="1000">$1000</div>
+		      </div>
+		    </div>					
+					
+					
+			</div>
+			<div class="ui column">
+				<div class="field">
+					<div class="ui radio checkbox">
+						<input name="methodDonated" value="paypal" checked="checked"
+							type="radio"> <label for="methodDonated"> PayPal</label>
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui radio checkbox">
+						<input name="methodDonated" value="direct" type="radio"> <label
+							for="methodDonated"> Direct</label>
+					</div>
+				</div>
+			</div>
+			</div>
+			<button class="ui button">Donate</button>
+			<!-- <div class="ui error message"></div> -->
+	</form>
+</div>
+<script src="@{'/public/javascripts/donate.js'}"></script>
