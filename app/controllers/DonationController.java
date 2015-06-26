@@ -16,7 +16,8 @@ public class DonationController extends Controller
         if (user != null)
         {
         	Logger.info("Donation controller: user is " + user.email);     	
-        	render (user);
+        	String donationprogress = getPercentTargetAchieved();
+        	render(user, donationprogress);
         }
         else
         {
@@ -33,6 +34,7 @@ public class DonationController extends Controller
         {
         	addDonation (user, amountDonated, methodDonated);
         	Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
+        	getPercentTargetAchieved();
         	index();
         }
         else
@@ -47,4 +49,25 @@ public class DonationController extends Controller
     	Donation bal = new Donation (user, amountDonated, methodDonated);
     	bal.save();
     }
-}
+    
+    private static long getDonationTarget()
+    {
+    	return 20000;
+    }
+    
+    public static String getPercentTargetAchieved()
+    {
+    	List<Donation> allDonations = Donation.findAll();
+    	long total = 0;
+    	for (Donation donation : allDonations)
+    	{
+    		total += donation.amountDonated;
+    	}
+    	long target = getDonationTarget();
+    	long percentachieved = (total*100/target);
+    	String progress = String.valueOf(percentachieved);
+    	Logger.info( progress + " percent achieved ");
+    	return progress;
+    }
+  }
+

@@ -10,3 +10,5 @@ $('.ui.form')
       }]
   }
 });
+
+$('#progress').progress('increment','${donationprogress}');
