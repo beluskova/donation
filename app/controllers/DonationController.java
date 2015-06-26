@@ -69,5 +69,22 @@ public class DonationController extends Controller
     	Logger.info( progress + " percent achieved ");
     	return progress;
     }
+    
+    public static void renderReport()
+    {
+    	String userId = session.get("logged_in_userid");
+    	User user = User.findById(Long.parseLong(userId));
+        if (user != null)
+        {
+    	List <Donation> donations = Donation.findAll();
+    	render(donations);
+    	Logger.info("Displaying all donors");
+        }
+    	else
+        {
+        	Logger.info("User not logged in");
+        	Accounts.login();
+        } 
+    }
   }
 

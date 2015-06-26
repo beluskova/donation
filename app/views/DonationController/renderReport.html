@@ -1,0 +1,31 @@
+ #{extends 'main.html' /} #{set title:'Report' /}
+
+<nav class="ui menu">
+	<a class="ui item" href="/home">Home</a> 
+	<a class="ui item" href="/signup">Sign Up</a> 
+	<a class="ui item" href="/login">Log In</a>
+	<a class="ui item" href="/donation">Make Donation</a> 
+	<a class="ui active item" href="/donation/report"> Report </a>
+	<a class="ui item" href="/logout">Sign Out</a>
+</nav>
+
+<h3> <b> List Donations:</b></h3>
+<table class="ui table">
+  <thead>
+    <tr>
+      <th> Donors </th>
+      <th> Amount ($) </th>
+      <th>Method donated </th>
+    </tr>
+  </thead>
+  <tbody>
+  #{list items:donations, as:'donation'}
+    <tr>
+      <td>${donation.from.email}</td>
+      <td>${donation.amountDonated}</td>
+      <td>${donation.methodDonated}</td>
+    </tr>
+ #{/list}
+  </tbody>
+</table>
+
