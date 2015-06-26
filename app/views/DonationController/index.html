@@ -9,12 +9,10 @@
 
 <div class="ui segment">
 	<h1 class="ui header">Welcome ${user.firstName}</h1>
-	<p>
-		<b> Please give generously </b>
-	</p>
+	<h4>  Please give generously </h4>
 	<form action="/donation/donate" method="POST" class="ui form segment">
 		<div class="ui two column grid">
-			<div class="six wide column">
+			<div class="four wide column">
 				<div class="ui basic horizontal segment">
 					<p>Select an amount:</p>
 					<div class="ui selection dropdown">
@@ -27,6 +25,9 @@
 							<div class="item" data-value="1000">$1000</div>
 						</div>
 					</div>
+					<button class="ui blue submit button">
+						<i class="gift icon"></i> Donate
+					</button>
 				</div>
 			</div>
 			<div class="column">
@@ -46,17 +47,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="ui vertical segment">
-		<button class="ui blue submit button">
-			<i class="gift icon"></i> Donate
-		</button>
-      </div>
 	</form>
+	<h4> Amount donated to support Homer for president: </h4>
 	<div class="ui blue progress" id="progress">
 		<div class="bar"></div>
 		<div class="progress"></div>
-		<div class="label">${donationprogress} % donated for Homer</div>
+		<div class="label">${donationprogress} % target achieved</div>
 	</div>
 </div>
 <script src="@{'/public/javascripts/donate.js'}"></script>
-<script> $('#progress').progress('increment','${donationprogress}');</script>
+<script>
+	$('#progress').progress('increment', '${donationprogress}');
+</script>
