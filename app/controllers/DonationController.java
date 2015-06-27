@@ -11,10 +11,10 @@ public class DonationController extends Controller
 
     public static void index() 
     {
-    	String userId = session.get("logged_in_userid");
-    	User user = User.findById(Long.parseLong(userId));
-        if (user != null)
+    	String userId = session.get("logged_in_userId");
+        if (userId != null)
         {
+        	User user = User.findById(Long.parseLong(userId));
         	Logger.info("Donation controller: user is " + user.email);     	
         	String donationprogress = getPercentTargetAchieved();
         	render(user, donationprogress);
@@ -28,10 +28,10 @@ public class DonationController extends Controller
     
     public static void donate (long amountDonated, String methodDonated)
     {
-    	String userId = session.get("logged_in_userid");
-    	User user = User.findById(Long.parseLong(userId));
-        if (user != null)
+    	String userId = session.get("logged_in_userId");
+        if (userId != null)
         {
+        	User user = User.findById(Long.parseLong(userId));
         	addDonation (user, amountDonated, methodDonated);
         	Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
         	getPercentTargetAchieved();
@@ -72,12 +72,12 @@ public class DonationController extends Controller
     
     public static void renderReport()
     {
-    	String userId = session.get("logged_in_userid");
-    	User user = User.findById(Long.parseLong(userId));
-        if (user != null)
+    	String userId = session.get("logged_in_userId");
+		if (userId != null)
         {
+		User user = User.findById(Long.parseLong(userId));	
     	List <Donation> donations = Donation.findAll();
-    	render(donations);
+    	render(user, donations);
     	Logger.info("Displaying all donors");
         }
     	else

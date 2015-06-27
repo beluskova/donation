@@ -17,9 +17,8 @@ public class Donation extends Model
 {
 	public long amountDonated;
 	public String methodDonated;
-	
-@ManyToOne
-public User from;
+	@ManyToOne
+    public User from;
 
 public Donation (User from, long amountDonated, String methodDonated)
 {

@@ -43,13 +43,14 @@ public class Accounts extends Controller
     	          User user = new User(usCitizen, firstName, lastName, email, password);
     	          user.save();
     	          Logger.info("Registration successful");
-    	          session.put("logged_in_userid", user.id);
+    	          session.put("logged_in_userId", user.id);
     	          Accounts.index();
     	        }
     	  }
     
     public static void login()
     {
+    	
     	render();
     }
     
@@ -67,7 +68,7 @@ public class Accounts extends Controller
     if ((user != null) && (user.checkPassword(password) == true))
         {
           Logger.info("Successfull authentication of  "+ user.firstName + " "+ user.lastName);
-          session.put("logged_in_userid", user.id);
+          session.put("logged_in_userId", user.id);
           Accounts.index();
         }
     else

@@ -23,7 +23,7 @@ User(bart):
     usCitizen: true
     firstName: Bart
     lastName: Simpson
-    email: homer@simpson.com
+    email: bart@simpson.com
     password: secret
     
 User(maggie):
@@ -32,3 +32,4 @@ User(maggie):
     lastName: Simpson
     email: maggie@simpson.com
     password: secret
+  
