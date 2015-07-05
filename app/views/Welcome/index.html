@@ -1,25 +1,35 @@
 #{extends 'main.html' /} #{set title:'Welcome to Donation' /}
-
-<nav class="ui menu">
-	<a class="ui active item" href="/home">Home</a> 
-	<a class="ui item" href="/signup">Sign Up</a> 
-	<a class="ui item" href="/login">Log In</a>
-	<a class="ui item" href="/donation">Make Donation</a>
-	<a class="ui item" href="/donation/report"> Report </a>
-	<a class="ui item" href="/logout">Sign Out</a>
+<body>
+<nav class="ui blue inverted pointing labeled icon six item menu">
+	<a class="ui active item" href="/home"> <i class="home icon"> </i>Home</a> 
+	<a class="ui item" href="/signup"><i class="user icon"> </i> SignUp</a> 
+	<a class="ui item" href="/login"><i class="lock icon"> </i> Log In</a> 
+	<a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a> 
+	<a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a> 
+	<a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
 </nav>
-<div class="ui three column grid">
-<div class="column">
-<h1 class="ui header">Welcome </h1>
-<p> <i> Homer for president</i> </p>
-<p> <i> Time for a change</i> </p>
-<p> Out with Boring Abamo </p>
-<p>Giving has never been so easy.</p>
-<p> You may register <a href="/signup"> here </a> absolutely free of charge. </p>
-<p> If already registered just click <a href="/login"> here </a> to log in.</p>
-<p>Then go to the Donation page and empty your wallet</p>
+
+<div class="ui grid">
+	<div class="four wide column">
+		<img class="ui statue picture image" src="/public/images/statue of liberty2.jpg">
+	</div>
+	<div class="six wide center aligned column">
+		<h1></h1>
+		<h1 class="ui blue huge header">Welcome</h1>
+		<p><i> Time for a change</i></p>
+		<p>Out with Boring Abamo</p>
+		<p>Giving has never been so easy.</p>
+		<p>You may register <a href="/signup"> here </a> absolutely free of charge.</p>
+		<p>If already registered just click <a href="/login"> here </a> to log in.</p>
+		<p>Then go to the Donation page and empty your wallet</p>
+	</div>
+	<div class="six wide column">
+		<h1></h1>
+		<div class="ui raised segment">
+			<h3>Candidates for president:</h3>
+			<img class="ui left floated avatar image" src="/public/images/homer.gif"> Homer Simpson
+		</div>
+	</div>
 </div>
-<div class="column">	
-<img class="ui left floated middle aligned image" src="/public/images/homer.gif">	
-</div>
-</div>
+</body>
+<script src="@{'/public/javascripts/welcome.js'}"></script>

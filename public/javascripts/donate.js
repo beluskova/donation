@@ -12,3 +12,10 @@ $('.ui.form')
 });
 
 $('#progress').progress('increment','${donationprogress}');
+
+$('.homer.picture')
+.transition('fade up', '2000ms')
+.transition('fade in', '2000ms')
+.transition('swing left')
+.transition('swing right')
+;

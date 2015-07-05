@@ -10,16 +10,13 @@ import play.db.jpa.Blob;
 import models.*;
 
 @OnApplicationStart
-public class Bootstrap extends Job 
-{ 
+public class Bootstrap extends Job
+{
   public void doJob() throws FileNotFoundException
   {
-
-      Fixtures.deleteDatabase();
+    if (User.count() == 0)
+    {
       Fixtures.loadModels("data.yml");
- //     Logger.info("Bootsrap runs");
- //     User user = new User(true, "firstName", "lastName", "email", "password");
- //     user.save();
-    
+    }
   }
 }

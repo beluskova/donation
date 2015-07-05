@@ -1,4 +1,5 @@
 package models;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
@@ -15,15 +16,15 @@ import play.db.jpa.Blob;
 @Entity
 public class Donation extends Model
 {
-	public long amountDonated;
-	public String methodDonated;
-	@ManyToOne
-    public User from;
+  public long amountDonated;
+  public String methodDonated;
+  @ManyToOne
+  public User from;
 
-public Donation (User from, long amountDonated, String methodDonated)
-{
-	this.amountDonated = amountDonated;
-	this.methodDonated = methodDonated;
-	this.from = from;
-}
+  public Donation(User from, long amountDonated, String methodDonated)
+  {
+    this.amountDonated = amountDonated;
+    this.methodDonated = methodDonated;
+    this.from = from;
+  }
 }

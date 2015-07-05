@@ -33,3 +33,17 @@ User(maggie):
     email: maggie@simpson.com
     password: secret
   
+Donation(first):
+    from: homer
+    amountDonated: 1000
+    methodDonated: direct
+    
+Donation(second):
+    from: maggie
+    amountDonated: 500
+    methodDonated: paypal
+    
+Donation(third):
+    from: bart
+    amountDonated: 100
+    methodDonated: direct

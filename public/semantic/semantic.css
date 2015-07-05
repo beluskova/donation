@@ -79,8 +79,7 @@ html {
  */
 
 body {
-  margin: 0; left-margin: 20px;
-}
+  margin: 0;
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -525,7 +524,9 @@ html {
 
 body {
   margin: 0px;
-  margin-left: 10px;
+  margin-left: 20px;
+  marhin-right:20 px;
+  margin-top:10px;
   padding: 0px;
   min-width: 320px;
   background: #ffffff;
