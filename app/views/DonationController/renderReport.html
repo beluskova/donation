@@ -1,30 +1,37 @@
  #{extends 'main.html' /} #{set title:'Report' /}
-<nav class="ui blue inverted pointing labeled icon six item menu">
-	<a class="ui item" href="/home"> <i class="home icon"> </i>Home</a> 
-	<a class="ui item" href="/signup"><i class="user icon"> </i> SignUp</a> 
-	<a class="ui item" href="/login"><i class="lock icon"> </i> Log In</a> 
-	<a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a> 
-	<a class="ui active item" href="/donation/report"><i class="bar chart icon"></i> Report </a> 
-	<a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
-</nav>
-<div class="ui center aligned compact  blue segment">
-<h3> <b> List Donations:</b></h3>
-<table class="ui celled structured table">
-  <thead>
-    <tr class="center aligned">
-      <th class="center aligned"> Donors </th>
-      <th class="center aligned"> Amount ($) </th>
-      <th class="center aligned">Method donated </th>
-    </tr>
-  </thead>
-  <tbody>
-  #{list items:donations, as:'donation'}
-    <tr class="center aligned">
-      <td class="center aligned">${donation.from.email}</td>
-      <td class="center aligned">${donation.amountDonated}</td>
-      <td class="center aligned">${donation.methodDonated}</td>
-    </tr>
- #{/list}
-  </tbody>
-</table>
+<!-- navigation bar  -->
+<div class="ui inverted right fixed pointing labeled icon vertical menu">
+  <a class="ui item" href="/home"> <i class="huge home icon"> </i> Home </a> 
+  <a class="ui item" href="/signup"><i class="user icon"> </i> SignUp</a> 
+  <a class="ui item" href="/login"><i class="lock icon"> </i> Log In</a> 
+  <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a> 
+  <a class="ui active item" href="/donation/report"><i class="bar chart icon"></i> Report </a> 
+  <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
+</div>
+<div class="bodybasic3">
+
+<!-- report table -->
+  <div class="ui center aligned raised segment">
+    <h3>
+      <b> List Donations:</b>
+    </h3>
+    <table class="ui celled structured table">
+      <thead>
+        <tr class="center aligned">
+          <th class="center aligned">Donors</th>
+          <th class="center aligned">Amount ($)</th>
+          <th class="center aligned">Method donated</th>
+        </tr>
+      </thead>
+      <tbody>
+        #{list items:donations, as:'donation'}
+        <tr class="center aligned">
+          <td class="center aligned">${donation.from.email}</td>
+          <td class="center aligned">${donation.amountDonated}</td>
+          <td class="center aligned">${donation.methodDonated}</td>
+        </tr>
+        #{/list}
+      </tbody>
+    </table>
+  </div> <!-- end of report table -->
 </div>

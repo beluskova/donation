@@ -1,0 +1,95 @@
+.intro { 
+	min-width: 470px;
+	width: 100%;
+	height:380px;
+	background-image: url('/public/images/statue4.jpg');
+	margin-top: -50px;
+	}
+
+.bodybasic
+{
+	background-color:#bdccad!important;
+	/* #E4F0FE!important;#bdccad */	
+    margin-right: 70px;
+	margin-left:0px;
+	padding-top:60px;
+}
+
+.bodybasic2
+{
+	background-color:#ffffff;
+/* 	#bdccad!important; */
+	/* #E4F0FE!important;#bdccad */	
+    margin-right: -50px;
+	margin-left:0px;
+}
+
+.bodybasic3
+{
+	background-color:#ffffff;
+    margin-right: 150px;
+	margin-left:15px;
+	padding-top:60px;
+}
+.navbar {
+    font-weight: bold;
+    color: #0033CC;
+    text-decoration: none;
+}
+
+.sigmar {
+	padding-top:180px;
+	color:#bdccad;
+	font-weight: bold;
+	font-size: 4em;
+	font-style: italic;
+	font-family: chewy, sigmar one, georgia, sans-serif;
+	position: bottom left:
+	
+}
+
+.sigmar1 {
+	color:#000000;
+	font-size: 1.4em;
+	font-style: oblique;
+	font-family: chewy, sigmar one, georgia, sans-serif;	
+}
+
+.sigmar2 {
+	color:#000000;
+	font-size: 1.4em;
+	font-family: sigmar one, georgia, sans-serif;	
+}
+
+.navlink {
+    font-weight: bold;
+    color:#ffffff;
+    /* color: #336699; */
+    text-decoration: none;
+}
+
+.ui.inverted.lightblue.segment {
+  background-color: #E4F0FE!important;
+  color: #000000 !important;
+}
+.ui.inverted.lightgreen.form {
+  background-color: #bdccad!important;
+  color: #000000 !important;
+}
+
+.ui.compact.lightgreen.segment {
+  background-color: #bdccad!important;
+  color: #000000 !important;
+}
+
+.ui.lightgreen.button {
+  background-color: #AAB89C!important;
+  color: #000000 !important;
+}
+
+.lightgreen.bar {
+  background-color:#AAB89C!important;
+ /*   #E4F0FE!important; */
+  color: #000000 !important;
+}
+

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>#{get 'title' /}</title>
-        <meta charset="${_response_encoding}"> 
-    </head>
-    <body>
-      #{get 'moreStyles' /}
-        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
-        <link rel="stylesheet" media="screen" href="@{'/public/semantic/semantic.min.css'}"> 
-        <script src="@{'/public/javascripts/jquery-2.1.1.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/semantic/semantic.js'}" type="text/javascript" charset="${_response_encoding}"></script> 
-        #{doLayout /}
-        
-        #{get 'moreScripts' /}
-        <script>$('.ui.checkbox')
+<head>
+<title>#{get 'title' /}</title>
+<meta charset="${_response_encoding}">
+</head>
+<body>
+  #{get 'moreStyles' /}
+  <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+  <link rel="stylesheet" media="screen" href="@{'/public/semantic/semantic.min.css'}">
+  <link rel="stylesheet" media="screen" href="@{'/public/semantic/mystyle.css'}"> <!-- my own stylesheet -->
+  <script src="@{'/public/javascripts/jquery-2.1.1.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+  <script src="@{'/public/semantic/semantic.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+  #{doLayout /} #{get 'moreScripts' /}
+  <script>$('.ui.checkbox')
                .checkbox()
-         ;</script>
-                  
-    </body>
+          ;
+  </script>
+</body>
 </html>

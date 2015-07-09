@@ -13,9 +13,9 @@ $('.ui.form')
 
 $('#progress').progress('increment','${donationprogress}');
 
-$('.homer.picture')
+$('.jumping.picture')
+.transition('swing up', '2000ms')
+.transition('swing down', '2000ms')
 .transition('fade up', '2000ms')
 .transition('fade in', '2000ms')
-.transition('swing left')
-.transition('swing right')
 ;

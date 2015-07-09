@@ -1,35 +1,50 @@
 #{extends 'main.html' /} #{set title:'Welcome to Donation' /}
-<body>
-<nav class="ui blue inverted pointing labeled icon six item menu">
-	<a class="ui active item" href="/home"> <i class="home icon"> </i>Home</a> 
-	<a class="ui item" href="/signup"><i class="user icon"> </i> SignUp</a> 
-	<a class="ui item" href="/login"><i class="lock icon"> </i> Log In</a> 
-	<a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a> 
-	<a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a> 
-	<a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
-</nav>
-
-<div class="ui grid">
-	<div class="four wide column">
-		<img class="ui statue picture image" src="/public/images/statue of liberty2.jpg">
-	</div>
-	<div class="six wide center aligned column">
-		<h1></h1>
-		<h1 class="ui blue huge header">Welcome</h1>
-		<p><i> Time for a change</i></p>
-		<p>Out with Boring Abamo</p>
-		<p>Giving has never been so easy.</p>
-		<p>You may register <a href="/signup"> here </a> absolutely free of charge.</p>
-		<p>If already registered just click <a href="/login"> here </a> to log in.</p>
-		<p>Then go to the Donation page and empty your wallet</p>
-	</div>
-	<div class="six wide column">
-		<h1></h1>
-		<div class="ui raised segment">
-			<h3>Candidates for president:</h3>
-			<img class="ui left floated avatar image" src="/public/images/homer.gif"> Homer Simpson
-		</div>
-	</div>
+<!-- navigation bar  -->
+<div class="ui inverted right fixed pointing labeled icon vertical menu">
+  <a class="ui active item" href="/home"> <i class="huge home icon"> </i> Home </a> 
+  <a class="ui item" href="/signup"><i class="user icon"> </i> SignUp</a> 
+  <a class="ui item" href="/login"><i class="lock icon"> </i> Log In</a> 
+  <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a> 
+  <a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a> 
+  <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
 </div>
-</body>
+<!-- banner picture  -->
+<div class="intro">
+  <div class="ui grid">
+    <div class="six wide center aligned column">
+      
+      <h1 class="sigmar">WELCOME</h1>
+    </div>
+  </div>
+</div>
+<div class="ui two column grid">
+  <div class="six wide center aligned column" style="padding-top:60px">
+
+    <img class="ui medium centered statue picture image" 
+      src="/public/images/statue of liberty2.jpg">
+  </div>
+  <div class="ten wide center aligned column"> 
+      <div class="bodybasic">
+
+      <h3 class="sigmar1">
+        <i> Time for a change</i>
+      </h3>
+      <h3 class="sigmar2">Out with Boring Abamo</h3>
+      <h3 class="sigmar2">Giving has never been so easy.</h3>
+      <h3 class="sigmar2">
+        You may register <a class="navlink" href="/signup"> here </a>
+        absolutely free of charge.
+      </h3>
+      <h3 class="sigmar2">
+        If already registered just click <a class="navlink"
+          href="/login"> here </a> to log in.
+      </h3>
+      <h3 class="sigmar2">Then go to the Donation page and empty
+        your wallet</h3>
+      <h1></h1>
+    </div>
+  </div>
+</div>
+
+
 <script src="@{'/public/javascripts/welcome.js'}"></script>
