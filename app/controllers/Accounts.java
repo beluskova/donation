@@ -37,9 +37,9 @@ public class Accounts extends Controller
    *          any String, mandatory, must be filled in, must be at least 6
    *          characters long
    */
-  public static void register(boolean usCitizen, String firstName, String lastName, String email, String password)
+  public static void register (boolean usCitizen, String firstName, String lastName,  String email, String password)
   {
-    Logger.info(usCitizen + " " + firstName + " " + lastName + " " + email + " " + password + " ");
+    Logger.info(usCitizen + " " + firstName + " " + lastName +  " " + email + " " + password + " ");
     User user = new User(usCitizen, firstName, lastName, email, password);
     user.save();
     Logger.info("Registration successful");

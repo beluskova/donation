@@ -22,7 +22,7 @@
     <div class="bodybasic2">
 <!-- signup form -->
       <div class="ui inverted lightgreen form segment" style="padding-top: 30px">
-        <form action="/register" method="POST">
+        <form class="ui form" action="/register" method="POST">
           <div class="inline field">
             <div class="field">
               <div class="ui checkbox">
@@ -32,7 +32,7 @@
               </div>
             </div>
           </div>
-          <div class="two fields">
+          <div class="three fields">
             <div class="required field">
               <label>First Name</label> <input placeholder="First Name"
                 type="text" name="firstName">
@@ -49,7 +49,7 @@
           <div class="required field">
             <label>Password</label> <input type="Password"
               name="password">
-          </div>
+          </div>       
           <div class="ui floating error message"></div>
           <h2 class="ui red tiny header">Fields marked with * are mandatory</h2>
           <button class="ui black submit button">Submit</button>
