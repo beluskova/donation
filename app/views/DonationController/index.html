@@ -8,64 +8,67 @@
   <a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a> 
   <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
 </div>
-
-<div class="bodybasic3"> 
-<div class="ui segment">
-  <h1 class="ui header">Welcome ${user.firstName}</h1>
-  <h4>Please give generously</h4>
-  <form action="/donation/donate" method="POST" class="ui form segment">
-    <div class="ui two column grid">
-      <div class="six wide column">
-        <img class="ui tiny left floated jumping picture image" src="/public/images/statue of liberty2.jpg">
+<!-- welcoming text -->
+<div class="bodybasic3">
+  <div class="ui segment">
+    <h1 class="ui header">Welcome ${user.firstName}</h1>
+    <h4>Please give generously</h4>
+<!-- donation segment -->
+    <form action="/donation/donate" method="POST" class="ui form segment">
+      <div class="ui two column grid">
+        <div class="six wide column">
+          <img class="ui tiny left floated jumping picture image" src="/public/images/statue of liberty2.jpg">
+<!-- amount dropdown menu  -->
           <div class="ui basic compact horizontal segment">
-          <label>Select an amount:</label>
-          <div class="ui selection dropdown">
-            <input name="amountDonated" type="hidden"> <i
-              class="dropdown icon"
-            ></i>
-            <div class="default text">Amount</div>
-            <div class="menu">
-              <div class="item" data-value="100">$100</div>
-              <div class="item" data-value="500">$500</div>
-              <div class="item" data-value="1000">$1000</div>
+            <div class="label">Select an amount:</div>
+            <div class="ui selection dropdown">
+              <input name="amountDonated" type="hidden"> <i class="dropdown icon"></i>
+              <div class="default text">Amount</div>
+              <div class="menu">
+                <div class="item" data-value="100">$100</div>
+                <div class="item" data-value="500">$500</div>
+                <div class="item" data-value="1000">$1000</div>
+              </div>
             </div>
-          </div>
-          <button class="ui lightgreen submit button">
-            <i class="gift icon"></i> Donate
-          </button>
-          <div class="ui error message"></div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="ui basic horizontal segment">
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input name="methodDonated" value="paypal"
-                checked="checked" type="radio"
-              > <label for="methodDonated"> <i
-                class="paypal icon"
-              ></i> Paypal
-              </label>
-            </div>
-          </div>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input name="methodDonated" value="direct" type="radio">
-              <label for="methodDonated"> <i class="money icon">
-              </i>Direct
-              </label>
-            </div>
+            <button class="ui lightgreen bottom attached submit button">
+              <i class="gift icon"></i> Donate
+            </button>
+<!-- error message pops up when no amount is selected -->
+            <div class="ui error message"></div>
           </div>
         </div>
+<!-- payment method -->
+        <div class="column">
+          <div class="ui basic horizontal segment">
+            <div class="label">Select a payment method:</div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input name="methodDonated" value="paypal" checked="checked" type="radio">
+                <label for="methodDonated"> <i class="paypal icon"></i> Paypal
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input name="methodDonated" value="direct" type="radio">
+                <label for="methodDonated"> <i
+                  class="money icon"> </i>Direct
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </form>
+<!-- end of donation segment  -->
+    <h4>Amount donated to support Homer for president:</h4>
+    <!-- progress bar  -->
+    <div class="ui progress" id="progress">
+      <div class="lightgreen bar"></div>
+      <div class="progress"></div>
+      <div class="label">${donationprogress} % target achieved</div>
     </div>
-  </form>
-  <h4>Amount donated to support Homer for president:</h4>
-  <div class="ui progress" id="progress">
-    <div class="lightgreen bar"></div>
-    <div class="progress"></div>
-    <div class="label">${donationprogress} % target achieved</div>
-  </div>
+<!-- end of progress bar -->
   </div>
 </div>
 <script src="@{'/public/javascripts/donate.js'}"></script>

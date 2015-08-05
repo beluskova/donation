@@ -11,8 +11,6 @@ $('.ui.form')
   }
 });
 
-$('#progress').progress('increment','${donationprogress}');
-
 $('.jumping.picture')
 .transition('swing up', '2000ms')
 .transition('swing down', '2000ms')

@@ -4,12 +4,12 @@
 	height:380px;
 	background-image: url('/public/images/statue4.jpg');
 	margin-top: -50px;
+	margin-left: -10px;
 	}
 
 .bodybasic
 {
 	background-color:#bdccad!important;
-	/* #E4F0FE!important;#bdccad */	
     margin-right: 70px;
 	margin-left:0px;
 	padding-top:60px;
@@ -18,10 +18,8 @@
 .bodybasic2
 {
 	background-color:#ffffff;
-/* 	#bdccad!important; */
-	/* #E4F0FE!important;#bdccad */	
-    margin-right: -50px;
-	margin-left:0px;
+    margin-right: 120px;
+	margin-left:-10px;
 }
 
 .bodybasic3
@@ -59,6 +57,12 @@
 	color:#000000;
 	font-size: 1.4em;
 	font-family: sigmar one, georgia, sans-serif;	
+}
+
+.sigmar3 {
+	color:#ffffff;
+	font-size: 1.4em;
+	font-family: sans-serif;	
 }
 
 .navlink {

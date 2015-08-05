@@ -1,15 +1,6 @@
 package models;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.ArrayList;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import play.db.jpa.Model;
-import play.db.jpa.Blob;
 
 @Entity
 public class User extends Model
