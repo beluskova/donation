@@ -2,37 +2,47 @@ User(homer):
     usCitizen: true
     firstName: Homer
     lastName: Simpson
+    age: 55
     email: homer@simpson.com
     password: secret
+    state: New York
 
 User(marge):
     usCitizen: true
     firstName: Marge
     lastName: Simpson
+    age: 48
     email: marge@simpson.com
     password: secret
+    state: Oklahoma
     
 User(lisa):
     usCitizen: true
     firstName: Lisa
     lastName: Simpson
+    age: 18
     email: lisa@simpson.com
     password: secret
+    state: Nebraska
     
 User(bart):
     usCitizen: true
     firstName: Bart
     lastName: Simpson
+    age: 53
     email: bart@simpson.com
     password: secret
+    state: Wyoming
     
 User(maggie):
     usCitizen: true
     firstName: Maggie
     lastName: Simpson
+    age: 25
     email: maggie@simpson.com
     password: secret
-  
+    state: New York
+    
 Donation(first):
     from: homer
     amountDonated: 1000

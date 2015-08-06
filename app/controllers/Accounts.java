@@ -37,10 +37,11 @@ public class Accounts extends Controller
    *          any String, mandatory, must be filled in, must be at least 6
    *          characters long
    */
-  public static void register (boolean usCitizen, String firstName, String lastName,  String email, String password)
+  //story01: age and state added here
+  public static void register (boolean usCitizen, String firstName, String lastName, String age, String email, String password, String state)
   {
-    Logger.info(usCitizen + " " + firstName + " " + lastName +  " " + email + " " + password + " ");
-    User user = new User(usCitizen, firstName, lastName, email, password);
+    Logger.info(usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " " + state);
+    User user = new User(usCitizen, firstName, lastName, age, email, password, state);
     user.save();
     Logger.info("Registration successful");
     session.put("logged_in_userid", user.id);
@@ -63,6 +64,7 @@ public class Accounts extends Controller
   public static void logout()
   {
     session.clear();
+    Logger.info("User logged out");
     Welcome.index();
   }
 
