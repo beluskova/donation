@@ -18,6 +18,8 @@
       <thead>
         <tr class="center aligned">
           <th class="center aligned">Donors</th>
+          <th class="center aligned">Age</th>                        <!-- story02  -->
+          <th class="center aligned">State</th>                      <!-- story02  -->
           <th class="center aligned">Amount ($)</th>
           <th class="center aligned">Method donated</th>
         </tr>
@@ -26,6 +28,8 @@
         #{list items: donations, as: 'donation'} 
         <tr class="center aligned">
           <td class="center aligned">${donation.from.firstName} ${donation.from.lastName}</td>
+          <td class="center aligned">${donation.from.age}</td>       <!-- story02  -->
+          <td class="center aligned">${donation.from.state}</td>     <!-- story02  -->
           <td class="center aligned">${donation.amountDonated}</td>
           <td class="center aligned">${donation.methodDonated}</td>
         </tr>
