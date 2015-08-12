@@ -18,6 +18,10 @@ GET     /donation                               DonationController.index
 POST    /donation/donate                        DonationController.donate
 GET     /donation/report                        DonationController.renderReport
 
+#Edit Profile
+GET     /edit                                   EditProfile.index
+POST    /editprofile                            EditProfile.edit
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

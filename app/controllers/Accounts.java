@@ -6,10 +6,6 @@ import models.*;
 
 public class Accounts extends Controller
 {
-  /*
-   * public static void index() { render(); }
-   */
-
   /**
    * A method to call the signup page whenever a signup button is clicked-on.
    */

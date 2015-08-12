@@ -62,7 +62,13 @@
 
 .sigmar3 {
 	color:#ffffff;
-	font-size: 1.4em;
+	font-size: 1em;
+	font-family: sans-serif;	
+}
+
+.sigmar4 {
+	color:#000000;
+	font-size: 1em;
 	font-family: sans-serif;	
 }
 
@@ -94,7 +100,16 @@
 
 .lightgreen.bar {
   background-color:#AAB89C!important;
- /*   #E4F0FE!important; */
   color: #000000 !important;
 }
 
+.ui.lightgreen.label {
+  background-color: #AAB89C!important;
+  color: #000000 !important;
+  margin-right: 55px;
+}
+
+.ui.button {
+    display: table;
+    margin: 0 auto;
+}
