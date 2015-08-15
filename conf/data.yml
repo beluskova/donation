@@ -2,46 +2,76 @@ User(homer):
     usCitizen: true
     firstName: Homer
     lastName: Simpson
+    # story01:
     age: 55
     email: homer@simpson.com
     password: secret
     state: New York
+    # story05:
+    addrLine1: Simsonville
+    addrLine2: 3 Orchard Drive
+    city: Manhattan
+    zipcode: 025N Y264
 
 User(marge):
     usCitizen: true
     firstName: Marge
     lastName: Simpson
+     # story01
     age: 48
     email: marge@simpson.com
     password: secret
     state: Oklahoma
+    # story05:
+    addrLine1: Margeville
+    addrLine2: 265 Belvedere Road
+    city: Lawton
+    zipcode: 026L W65
     
 User(lisa):
     usCitizen: true
     firstName: Lisa
     lastName: Simpson
     age: 18
+    # story01:
     email: lisa@simpson.com
     password: secret
     state: Nebraska
+    # story05:
+    addrLine1: Lisa's House
+    addrLine2: 78 Lovely View
+    city: Norfolk
+    zipcode: 028N F78
     
 User(bart):
     usCitizen: true
     firstName: Bart
     lastName: Simpson
+    # story01
     age: 53
     email: bart@simpson.com
     password: secret
     state: Wyoming
+    # story05:
+    addrLine1: Bartysdole
+    addrLine2: 366 Green Meadow
+    city: Buffalo
+    zipcode: 36B F99
     
 User(maggie):
     usCitizen: true
     firstName: Maggie
     lastName: Simpson
+    #story01
     age: 25
     email: maggie@simpson.com
     password: secret
     state: New York
+    # story05:
+    addrLine1: Simsonville
+    addrLine2: 56 Masons Avenue
+    city: Oueens
+    zipcode: 025N Y367
     
 Donation(first):
     from: homer

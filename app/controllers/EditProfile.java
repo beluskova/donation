@@ -38,16 +38,21 @@ public class EditProfile extends Controller
    * than already saved details) is typed-in. Once the new details are saved,
    * the user is redirected to the Donation page.
    */
-
+  //story01: age and state added here
+  //story05: addrLine1, addrLine2, city, zipcode added here
   public static void edit(boolean usCitizen, String firstName, String lastName, String age, String email,
-      String password, String state)
+                          String password, String state, String addrLine1, String addrLine2, String city, String zipcode)
   {
     String userId = session.get("logged_in_userid");
     User user = User.findById(Long.parseLong(userId));
     user.firstName = firstName;
     user.lastName = lastName;
-    user.age = age;
-    user.state = state;
+    user.age = age;                  //story01
+    user.state = state;              //story01 
+    user.addrLine1 = addrLine1;      //story05
+    user.addrLine2 = addrLine2;      //story05
+    user.city = city;                //story05
+    user.zipcode = zipcode;          //story05
     user.save();
     Logger.info("Editing successful");
     DonationController.index();

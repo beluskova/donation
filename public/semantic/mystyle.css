@@ -30,6 +30,7 @@
 	margin-left:15px;
 	padding-top:60px;
 }
+
 .navbar {
     font-weight: bold;
     color: #0033CC;
@@ -86,6 +87,14 @@
 .ui.inverted.lightgreen.form {
   background-color: #bdccad!important;
   color: #000000 !important;
+  padding-left: 115px;
+}
+
+.ui.inverted.lightgreen1.form {
+  background-color: #bdccad!important;
+  color: #000000 !important;
+  padding-left: 115px;
+  padding-right: 150px;
 }
 
 .ui.compact.lightgreen.segment {
@@ -112,4 +121,21 @@
 .ui.button {
     display: table;
     margin: 0 auto;
+}
+
+.ui.label1
+{
+   width: 190px;
+   margin-top: 20px;
+   background-color: #C4CDBA;
+}
+
+.ui.floating.error
+{
+   width: 87.5%;
+}
+
+.ui.floating1.error
+{
+   width: 64%;
 }

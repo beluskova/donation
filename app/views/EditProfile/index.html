@@ -4,119 +4,153 @@
 <!-- navigation bar  -->
 <div class="ui inverted right fixed pointing labeled icon vertical menu" style="padding-left: 20px">
   <a class="ui active item" href="/edit"><i class="edit icon"> </i> Edit Profile</a>
-  <!--     <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a>    story04 -->
+  <!--     <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a>                       story04 -->
   <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
 </div>
 <!-- edit form -->
 <div class="bodybasic3">
-<div class="ui raised segment">
- <h1> Edit your personal details: </h1>
-  <form class="ui form" action="/editprofile" method="POST" name="edit">
-    <div class="two fields">
-      <div class="field">
-        <label>First Name</label>
-        <div class="ui input focus">
-          <input type="text" name="firstName" value=${user.firstName}>
-        </div>
-      </div>
-      <div class="field">
-        <label>Last Name</label>
-        <div class="ui input focus">
-          <input type="text" name="lastName" value=${user.lastName}>
-        </div>
-      </div>
-    </div>
-    <div class="two fields">
-      <div class="field">
-        <label>Age</label>
-        <div class="ui input focus">
-          <input type="text" name="age" value=${user.age}>
-        </div>
-      </div>
-      <div class="field">
-        <label>State</label>
-        <div class="ui input focus">
+  <div class="ui raised segment">
+    <h1>Edit your personal details:</h1>
+    <form class="ui form" action="/editprofile" method="POST" name="edit">
+      <div class="ui two column grid">
+        <div class="ten wide column">
+          <div class="three fields">
+            <div class="four wide field">
+              <label>First Name</label>
+              <div class="ui input focus">
+                <input type="text" name="firstName" value=${user.firstName}>
+              </div>
+            </div>
+            <div class="four wide field">
+              <label>Last Name</label>
+              <div class="ui input focus">
+                <input type="text" name="lastName" value=${user.lastName}>
+              </div>
+            </div>
+<!-- age field - story01 -->
+            <div class="two wide field">
+              <label>Age</label>
+              <div class="ui input focus">
+                <input type="text" name="age" value=${user.age}>
+              </div>
+            </div>
+<!-- end of age field -->
+          </div>
+          <div class="two fields">
+            <div class="four wide field">
+              <label>Address Line 1</label>                                                     <!-- story05  -->
+              <div class="ui input focus">
+                <input type="text" name="addrLine1" value=${user.addrLine1}>
+              </div>
+            </div>
+            <div class="four wide field">
+              <label>Address Line 2</label>                                                     <!-- story05  -->
+              <div class="ui input focus">
+                <input type="text" name="addrLine2" value=${user.addrLine2}>
+              </div>
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="four wide field">
+              <label>City</label>                                                               <!-- story05  -->
+              <div class="ui input focus">
+                <input type="text" name="city" value=${user.city}>
+              </div>
+            </div>
+            <div class="three wide field">
+              <label>Zipcode</label>                                                            <!-- story05  -->
+              <div class="ui input focus">
+                <input type="text" name="zipcode" value=${user.zipcode}>
+              </div>
+            </div>
+          </div> 
+          <div class="four wide field">
+            <label>State</label>
+            <div class="ui input focus">
 <!-- state selection dropdown -->
-          <select class="ui dropdown" id="state" name="state">
-            <option value="${user.state}">${user.state}</option>    <!-- This will show an already saved state for the user -->
-            <option value="">State</option>
-            <option value="Alabama">Alabama</option>
-            <option value="Alaska">Alaska</option>
-            <option value="Arizona">Arizona</option>
-            <option value="Arkansas">Arkansas</option>
-            <option value="California">California</option>
-            <option value="Colorado">Colorado</option>
-            <option value="Connecticut">Connecticut</option>
-            <option value="Delaware">Delaware</option>
-            <option value="District of Columbia">District Of Columbia</option>
-            <option value="Florida">Florida</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Hawaii">Hawaii</option>
-            <option value="Idaho">Idaho</option>
-            <option value="Illinois">Illinois</option>
-            <option value="Indiana">Indiana</option>
-            <option value="Iowa">Iowa</option>
-            <option value="Kansas">Kansas</option>
-            <option value="Kentucky">Kentucky</option>
-            <option value="Louisiana">Louisiana</option>
-            <option value="Maine">Maine</option>
-            <option value="Maryland">Maryland</option>
-            <option value="Massachusetts">Massachusetts</option>
-            <option value="Michigan">Michigan</option>
-            <option value="Minnesota">Minnesota</option>
-            <option value="Mississippi">Mississippi</option>
-            <option value="Missouri">Missouri</option>
-            <option value="Montana">Montana</option>
-            <option value="Nebraska">Nebraska</option>
-            <option value="Nevada">Nevada</option>
-            <option value="New Hampshire">New Hampshire</option>
-            <option value="New Jersey">New Jersey</option>
-            <option value="New Mexico">New Mexico</option>
-            <option value="New York">New York</option>
-            <option value="North Carolina">North Carolina</option>
-            <option value="North Dakota">North Dakota</option>
-            <option value="Ohio">Ohio</option>
-            <option value="Oklahoma">Oklahoma</option>
-            <option value="Oregon">Oregon</option>
-            <option value="Pennsylvania">Pennsylvania</option>
-            <option value="Rhode Island">Rhode Island</option>
-            <option value="South Carolina">South Carolina</option>
-            <option value="South Dakota">South Dakota</option>
-            <option value="Tennessee">Tennessee</option>
-            <option value="Texas">Texas</option>
-            <option value="Utah">Utah</option>
-            <option value="Vermont">Vermont</option>
-            <option value="Virginia">Virginia</option>
-            <option value="Washington">Washington</option>
-            <option value="West Virginia">West Virginia</option>
-            <option value="Wisconsin">Wisconsin</option>
-            <option value="Wyoming">Wyoming</option>
-          </select>
+              <select class="ui dropdown" id="state" name="state">
+                <option value="${user.state}">${user.state}</option>     <!-- This will show an already saved state for the user -->
+                <option value="">State</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Connecticut">Connecticut</option>
+                <option value="Delaware">Delaware</option>
+                <option value="District of Columbia">District Of Columbia</option>
+                <option value="Florida">Florida</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Illinois">Illinois</option>
+                <option value="Indiana">Indiana</option>
+                <option value="Iowa">Iowa</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Kentucky">Kentucky</option>
+                <option value="Louisiana">Louisiana</option>
+                <option value="Maine">Maine</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Massachusetts">Massachusetts</option>
+                <option value="Michigan">Michigan</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Mississippi">Mississippi</option>
+                <option value="Missouri">Missouri</option>
+                <option value="Montana">Montana</option>
+                <option value="Nebraska">Nebraska</option>
+                <option value="Nevada">Nevada</option>
+                <option value="New Hampshire">New Hampshire</option>
+                <option value="New Jersey">New Jersey</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="New York">New York</option>
+                <option value="North Carolina">North Carolina</option>
+                <option value="North Dakota">North Dakota</option>
+                <option value="Ohio">Ohio</option>
+                <option value="Oklahoma">Oklahoma</option>
+                <option value="Oregon">Oregon</option>
+                <option value="Pennsylvania">Pennsylvania</option>
+                <option value="Rhode Island">Rhode Island</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="South Dakota">South Dakota</option>
+                <option value="Tennessee">Tennessee</option>
+                <option value="Texas">Texas</option>
+                <option value="Utah">Utah</option>
+                <option value="Vermont">Vermont</option>
+                <option value="Virginia">Virginia</option>
+                <option value="Washington">Washington</option>
+                <option value="West Virginia">West Virginia</option>
+                <option value="Wisconsin">Wisconsin</option>
+                <option value="Wyoming">Wyoming</option>
+              </select>
 <!-- end of state selection dropdown -->
+            </div>
+          </div>
+          <div class="ui floating1 error message"></div>                        <!--  if edit.js conditions for form are not met -->
+        </div>
+        <div class="three wide center aligned column" style="margin-top: -70px">
+          <div class="ui label1 label">
+            <h3 class="sigmar4">Save my new details</h3>
+            <button class="ui black submit button">Edit</button>                                     <!-- new details are saved  -->
+          </div>
+          <div class="ui label1 label">
+            <h3 class="sigmar4">Display my saved details</h3>
+            <button class="ui lightgreen reset button">Reset</button>        <!-- all details are reset to their original value  -->
+          </div>
+          <div class="ui label1 label">
+            <h3 class="sigmar4">Clear all fields</h3>
+            <button class="ui lightgreen clear button">Clear</button>                           <!-- all form fields are cleared -->
+          </div>
+          <div class="ui label1 label">
+            <h3 class="sigmar4">Return to Donation page</h3>
+            <div class="ui lightgreen button">
+              <a href="/donation"> Cancel </a>                                                  <!-- return to the Donation page -->
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="ui floating error message"></div>                 <!--  if edit.js conditions for form are not met -->
-    <div class="ui label">
-      <h3 class="sigmar4">Save my new details</h3>
-      <button class="ui black submit button">Edit</button>        <!-- new details are saved  -->
-    </div>
-    <div class="ui label">
-      <h3 class="sigmar4">Display already saved details</h3>
-      <button class="ui lightgreen reset button">Reset</button>   <!-- all details are reset to their original value  -->
-    </div>
-    <div class="ui label">
-      <h3 class="sigmar4">Clear all fields</h3>
-      <button class="ui lightgreen clear button">Clear</button>   <!-- all form fields are cleared -->
-    </div>
-    <div class="ui label">
-      <h3 class="sigmar4">Return to the Donation page</h3>
-      <div class="ui lightgreen button"> 
-      <a href="/donation"> Cancel </a>                            <!-- return to the Donation page -->
-      </div>                                                      
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 </div>
 <!--  end of edit form -->
 

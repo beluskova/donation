@@ -4,9 +4,9 @@
     <a class="ui item" href="/home"> <i class="huge home icon"> </i> Home </a>
 	<a class="ui active item" href="/signup"><i class="user icon"> </i> SignUp</a> 
 	<a class="ui item" href="/login"><i class="lock icon"> </i> Log In</a> 
-    <!-- <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a>        story04 -->
-    <!-- <a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a>   story04 -->
-    <!-- <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>           story04 -->	
+    <!-- <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a>                              story04  -->
+    <!-- <a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a>                         story04  -->
+    <!-- <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>                                 story04  -->	
 </div>
 <!-- banner picture  -->
 <div class="intro">
@@ -19,94 +19,112 @@
 <div class="ui grid">
   <div class="sixteen wide center aligned column">
     <div class="bodybasic2">
-<!-- signup form -->
+      <!-- signup form -->
       <div class="ui inverted lightgreen form segment" style="padding-top: 30px">
         <form class="ui form" action="/register" method="POST" name="register">
           <div class="inline field">
             <div class="field">
               <div class="ui checkbox">
                 <input name="usCitizen" type="checkbox" value="true" id="usCitizen"> 
-                <label for="usCitizen">
+                  <label for="usCitizen">
                   Tick to confirm you are a citizen of the USA <i class="us flag"></i>
-                </label>
+                  </label>
               </div>
             </div>
           </div>
           <div class="three fields">
-            <div class="required field">
+            <div class="six wide required field">
               <label>First Name</label> <input placeholder="First Name" type="text" name="firstName">
             </div>
-            <div class="field">
+            <div class="six wide field">
               <label>Last Name</label> <input placeholder="Last Name" type="text" name="lastName">
             </div>
-  <!-- age field - story01 -->
-            <div class="field">
+<!-- age field - story01 -->
+            <div class="two wide field">
               <label>Age</label> <input placeholder="Age" type="text" name="age">
             </div>
-  <!-- end of age field -->
+<!-- end of age field -->
           </div>
-          <div class="required field">
-            <label>Email</label> <input placeholder="Email" type="text" name="email">
+          <div class="four fields">
+            <div class="four wide field">                                                                        <!-- story05  -->
+              <label>Address Line 1</label> <input placeholder="Address Line 1" type="text" name="addrLine1">
+            </div>
+            <div class="four wide field">                                                                        <!-- story05  -->
+              <label>Address Line 2</label> <input placeholder="Address Line 2" type="text" name="addrLine2">
+            </div>
+            <div class="four wide field">                                                                        <!-- story05  -->
+              <label>City</label> <input placeholder="City" type="text" name="city">
+            </div>
+            <div class="two wide field">                                                                         <!-- story05  -->
+              <label>Zipcode</label> <input placeholder="Zip code" type="text" name="zipcode">
+            </div>
           </div>
-          <div class="required field">
-            <label>Password</label> <input placeholder="Password" type="Password" name="password">
+<!--  state selection dropdown - story01 -->
+          <div class="seven wide field">
+            <label>State</label> <select class="ui dropdown" id="state" disabled="disabled" name="state">
+              <option value="">State</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="District of Columbia">District Of Columbia</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
           </div>
-  <!--  state selection dropdown - story01 -->
-          <select class="ui dropdown" id="state" disabled="disabled" name="state">
-            <option value="">State</option>
-            <option value="Alabama">Alabama</option>
-            <option value="Alaska">Alaska</option>
-            <option value="Arizona">Arizona</option>
-            <option value="Arkansas">Arkansas</option>
-            <option value="California">California</option>
-            <option value="Colorado">Colorado</option>
-            <option value="Connecticut">Connecticut</option>
-            <option value="Delaware">Delaware</option>
-            <option value="District of Columbia">District Of Columbia</option>
-            <option value="Florida">Florida</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Hawaii">Hawaii</option>
-            <option value="Idaho">Idaho</option>
-            <option value="Illinois">Illinois</option>
-            <option value="Indiana">Indiana</option>
-            <option value="Iowa">Iowa</option>
-            <option value="Kansas">Kansas</option>
-            <option value="Kentucky">Kentucky</option>
-            <option value="Louisiana">Louisiana</option>
-            <option value="Maine">Maine</option>
-            <option value="Maryland">Maryland</option>
-            <option value="Massachusetts">Massachusetts</option>
-            <option value="Michigan">Michigan</option>
-            <option value="Minnesota">Minnesota</option>
-            <option value="Mississippi">Mississippi</option>
-            <option value="Missouri">Missouri</option>
-            <option value="Montana">Montana</option>
-            <option value="Nebraska">Nebraska</option>
-            <option value="Nevada">Nevada</option>
-            <option value="New Hampshire">New Hampshire</option>
-            <option value="New Jersey">New Jersey</option>
-            <option value="New Mexico">New Mexico</option>
-            <option value="New York">New York</option>
-            <option value="North Carolina">North Carolina</option>
-            <option value="North Dakota">North Dakota</option>
-            <option value="Ohio">Ohio</option>
-            <option value="Oklahoma">Oklahoma</option>
-            <option value="Oregon">Oregon</option>
-            <option value="Pennsylvania">Pennsylvania</option>
-            <option value="Rhode Island">Rhode Island</option>
-            <option value="South Carolina">South Carolina</option>
-            <option value="South Dakota">South Dakota</option>
-            <option value="Tennessee">Tennessee</option>
-            <option value="Texas">Texas</option>
-            <option value="Utah">Utah</option>
-            <option value="Vermont">Vermont</option>
-            <option value="Virginia">Virginia</option>
-            <option value="Washington">Washington</option>
-            <option value="West Virginia">West Virginia</option>
-            <option value="Wisconsin">Wisconsin</option>
-            <option value="Wyoming">Wyoming</option>
-          </select>
-  <!-- end of state selection dropdown -->
+<!-- end of state selection dropdown -->
+          <div class="two fields" style="padding-top: 40px">
+            <div class="seven wide required field">
+              <label>Email</label> <input placeholder="Email" type="text" name="email">
+            </div>
+            <div class="seven wide required field">
+              <label>Password</label> <input placeholder="Password" type="Password" name="password">
+            </div>
+          </div>
           <div class="ui floating error message"></div>
           <h2 class="ui red tiny header">Fields marked with * are mandatory</h2>
           <button class="ui black submit button">Submit</button>

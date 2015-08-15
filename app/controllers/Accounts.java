@@ -34,10 +34,13 @@ public class Accounts extends Controller
    *          characters long
    */
   //story01: age and state added here
-  public static void register (boolean usCitizen, String firstName, String lastName, String age, String email, String password, String state)
+  //story05: addrLine1, addrLine2, city, zipcode added here
+  public static void register (boolean usCitizen, String firstName, String lastName, String age, String email, String password, String state,
+      String addrLine1, String addrLine2, String city, String zipcode)
   {
-    Logger.info(usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " " + state);
-    User user = new User(usCitizen, firstName, lastName, age, email, password, state);
+    Logger.info("New user: " + usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " "         
+                 + state + " "+ addrLine1  + " " + addrLine2 + " " + city + " " + zipcode);
+    User user = new User(usCitizen, firstName, lastName, age, email, password, state, addrLine1, addrLine2, city, zipcode);
     user.save();
     Logger.info("Registration successful");
     session.put("logged_in_userid", user.id);
