@@ -17,6 +17,7 @@ public class User extends Model
   public String addrLine2;         //story05
   public String city;              //story05
   public String zipcode;           //story05
+
   
   //story01: age and state added here
   //story05: addrLine1, addrLine2, city, zipcode added here

@@ -13,6 +13,7 @@ User(homer):
     city: Manhattan
     zipcode: 025N Y264
 
+    
 User(marge):
     usCitizen: true
     firstName: Marge
@@ -87,3 +88,4 @@ Donation(third):
     from: bart
     amountDonated: 100
     methodDonated: direct
+

@@ -29,6 +29,7 @@ public class EditProfile extends Controller
       render(user);
     }
   }
+  
   /**
    * A method to edit user's details once the user changes their information in
    * the form provided on views/EditProfile/index.html Even though the method
@@ -57,5 +58,4 @@ public class EditProfile extends Controller
     Logger.info("Editing successful");
     DonationController.index();
   }
-
 }

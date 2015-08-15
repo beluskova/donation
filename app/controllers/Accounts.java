@@ -34,19 +34,18 @@ public class Accounts extends Controller
    *          characters long
    */
   //story01: age and state added here
-  //story05: addrLine1, addrLine2, city, zipcode added here
-  public static void register (boolean usCitizen, String firstName, String lastName, String age, String email, String password, String state,
-      String addrLine1, String addrLine2, String city, String zipcode)
-  {
-    Logger.info("New user: " + usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " "         
-                 + state + " "+ addrLine1  + " " + addrLine2 + " " + city + " " + zipcode);
-    User user = new User(usCitizen, firstName, lastName, age, email, password, state, addrLine1, addrLine2, city, zipcode);
+  //story05: the register form has changed
+  public static void register (User user)
+      {
+    //Logger.info("New user: " + usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " "         
+     //            + state);
+    //User user = new User(usCitizen, firstName, lastName, age, email, password, state);
     user.save();
     Logger.info("Registration successful");
     session.put("logged_in_userid", user.id);
     DonationController.index();
   }
-
+  
   /**
    * A method loads the login page whenever the login button is clicked-on.
    */

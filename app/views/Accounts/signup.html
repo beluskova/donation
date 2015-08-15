@@ -25,7 +25,7 @@
           <div class="inline field">
             <div class="field">
               <div class="ui checkbox">
-                <input name="usCitizen" type="checkbox" value="true" id="usCitizen"> 
+                <input name="user.usCitizen" type="checkbox" value="true" id="usCitizen"> 
                   <label for="usCitizen">
                   Tick to confirm you are a citizen of the USA <i class="us flag"></i>
                   </label>
@@ -34,34 +34,35 @@
           </div>
           <div class="three fields">
             <div class="six wide required field">
-              <label>First Name</label> <input placeholder="First Name" type="text" name="firstName">
+              <label>First Name</label> <input placeholder="First Name" type="text" name="user.firstName">
             </div>
             <div class="six wide field">
-              <label>Last Name</label> <input placeholder="Last Name" type="text" name="lastName">
+              <label>Last Name</label> <input placeholder="Last Name" type="text" name="user.lastName">
             </div>
 <!-- age field - story01 -->
             <div class="two wide field">
-              <label>Age</label> <input placeholder="Age" type="text" name="age">
+              <label>Age</label> <input placeholder="Age" type="text" name="user.age">
             </div>
 <!-- end of age field -->
           </div>
           <div class="four fields">
             <div class="four wide field">                                                                        <!-- story05  -->
-              <label>Address Line 1</label> <input placeholder="Address Line 1" type="text" name="addrLine1">
+              <label>Address Line 1</label> <input placeholder="Address Line 1" type="text" name="user.addrLine1">
             </div>
             <div class="four wide field">                                                                        <!-- story05  -->
-              <label>Address Line 2</label> <input placeholder="Address Line 2" type="text" name="addrLine2">
+              <label>Address Line 2</label> <input placeholder="Address Line 2" type="text" name="user.addrLine2">
             </div>
             <div class="four wide field">                                                                        <!-- story05  -->
-              <label>City</label> <input placeholder="City" type="text" name="city">
+              <label>City</label> <input placeholder="City" type="text" name="user.city">
             </div>
             <div class="two wide field">                                                                         <!-- story05  -->
-              <label>Zipcode</label> <input placeholder="Zip code" type="text" name="zipcode">
+              <label>Zipcode</label> <input placeholder="Zip code" type="text" name="user.zipcode">
             </div>
           </div>
 <!--  state selection dropdown - story01 -->
           <div class="seven wide field">
-            <label>State</label> <select class="ui dropdown" id="state" disabled="disabled" name="state">
+            <label>State</label> 
+            <select class="ui dropdown" id="state" disabled="disabled" name="user.state">
               <option value="">State</option>
               <option value="Alabama">Alabama</option>
               <option value="Alaska">Alaska</option>
@@ -119,10 +120,10 @@
 <!-- end of state selection dropdown -->
           <div class="two fields" style="padding-top: 40px">
             <div class="seven wide required field">
-              <label>Email</label> <input placeholder="Email" type="text" name="email">
+              <label>Email</label> <input placeholder="Email" type="text" name="user.email">
             </div>
             <div class="seven wide required field">
-              <label>Password</label> <input placeholder="Password" type="Password" name="password">
+              <label>Password</label> <input placeholder="Password" type="Password" name="user.password">
             </div>
           </div>
           <div class="ui floating error message"></div>
