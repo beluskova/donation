@@ -49,3 +49,7 @@ $checkBox.on('change', function(e) {
 		$select.attr('disabled', 'disabled');
 	}
 });
+
+//story06
+$('.ui.selection.dropdown').dropdown();
+

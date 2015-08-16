@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import play.*;
 import play.mvc.*;
 import models.*;
@@ -11,7 +13,8 @@ public class Accounts extends Controller
    */
   public static void signup()
   {
-    render();
+    List<Candidate> candidates = Candidate.findAll();     //story06
+    render(candidates);                                   //story06  
   }
 
   /**
@@ -35,12 +38,16 @@ public class Accounts extends Controller
    */
   //story01: age and state added here
   //story05: the register form has changed
-  public static void register (User user)
+  //story06: candidate added
+  public static void register (User user, String candidateEmail)
       {
+    //story05: obsolete code
     //Logger.info("New user: " + usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " "         
-     //            + state);
+    //            + state);
     //User user = new User(usCitizen, firstName, lastName, age, email, password, state);
-    user.save();
+    Candidate candidate = Candidate.findByEmail(candidateEmail);
+    user.addCandidate(candidate);                //story06
+    user.save();                                 //story06
     Logger.info("Registration successful");
     session.put("logged_in_userid", user.id);
     DonationController.index();

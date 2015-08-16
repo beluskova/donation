@@ -1,12 +1,15 @@
 #{extends 'main.html' /} #{set title:'Signup for Donation' /}
 <!-- navigation bar  -->
-<div class="ui inverted right fixed pointing labeled icon vertical menu" style="padding-left: 20px">
-    <a class="ui item" href="/home"> <i class="huge home icon"> </i> Home </a>
-	<a class="ui active item" href="/signup"><i class="user icon"> </i> SignUp</a> 
-	<a class="ui item" href="/login"><i class="lock icon"> </i> Log In</a> 
-    <!-- <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a>                              story04  -->
-    <!-- <a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a>                         story04  -->
-    <!-- <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>                                 story04  -->	
+<div class="ui inverted right fixed pointing labeled icon vertical menu"
+  style="padding-left: 20px">
+  <a class="ui item" href="/home"> <i class="huge home icon"> </i>
+    Home
+  </a> <a class="ui active item" href="/signup"><i class="user icon">
+  </i> SignUp</a> <a class="ui item" href="/login"><i class="lock icon">
+  </i> Log In</a>
+  <!-- <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a>                              story04  -->
+  <!-- <a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a>                         story04  -->
+  <!-- <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>                                 story04  -->
 </div>
 <!-- banner picture  -->
 <div class="intro">
@@ -26,9 +29,9 @@
             <div class="field">
               <div class="ui checkbox">
                 <input name="user.usCitizen" type="checkbox" value="true" id="usCitizen"> 
-                  <label for="usCitizen">
-                  Tick to confirm you are a citizen of the USA <i class="us flag"></i>
-                  </label>
+                <label for="usCitizen"> Tick to confirm you are a citizen of the USA 
+                <i class="us flag"></i>
+                </label>
               </div>
             </div>
           </div>
@@ -46,23 +49,22 @@
 <!-- end of age field -->
           </div>
           <div class="four fields">
-            <div class="four wide field">                                                                        <!-- story05  -->
+            <div class="four wide field">                                                                      <!-- story05  -->
               <label>Address Line 1</label> <input placeholder="Address Line 1" type="text" name="user.addrLine1">
             </div>
-            <div class="four wide field">                                                                        <!-- story05  -->
+            <div class="four wide field">                                                                      <!-- story05  -->
               <label>Address Line 2</label> <input placeholder="Address Line 2" type="text" name="user.addrLine2">
             </div>
-            <div class="four wide field">                                                                        <!-- story05  -->
+            <div class="four wide field">                                                                      <!-- story05  -->
               <label>City</label> <input placeholder="City" type="text" name="user.city">
             </div>
-            <div class="two wide field">                                                                         <!-- story05  -->
+            <div class="two wide field">                                                                       <!-- story05  -->
               <label>Zipcode</label> <input placeholder="Zip code" type="text" name="user.zipcode">
             </div>
           </div>
 <!--  state selection dropdown - story01 -->
           <div class="seven wide field">
-            <label>State</label> 
-            <select class="ui dropdown" id="state" disabled="disabled" name="user.state">
+            <label>State</label> <select class="ui dropdown" id="state" disabled="disabled" name="user.state">
               <option value="">State</option>
               <option value="Alabama">Alabama</option>
               <option value="Alaska">Alaska</option>
@@ -118,6 +120,23 @@
             </select>
           </div>
 <!-- end of state selection dropdown -->
+<!-- story06: candidate selection dropdown -->
+          <div class="seven wide field">
+            <label>Candidate</label>
+            <div class="ui selection dropdown">
+            <input name="candidateEmail" type="hidden"> 
+              <i class="dropdown icon"></i>
+              <div class="default text">Select your Candidate here</div>
+              <div class="menu">
+                #{list items: candidates, as: 'candidate'}
+                <div class="item" data-value="${candidate.candidateEmail}"> 
+                ${candidate.candidateFirstName} ${candidate.candidateLastName}
+                </div>
+                #{/list}
+              </div>
+            </div>
+          </div>
+<!-- end of candidate selection dropdown  -->
           <div class="two fields" style="padding-top: 40px">
             <div class="seven wide required field">
               <label>Email</label> <input placeholder="Email" type="text" name="user.email">
@@ -137,3 +156,4 @@
 </div>
 
 <script src="@{'/public/javascripts/signup.js'}"></script>
+

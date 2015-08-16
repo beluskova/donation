@@ -12,7 +12,6 @@ User(homer):
     addrLine2: 3 Orchard Drive
     city: Manhattan
     zipcode: 025N Y264
-
     
 User(marge):
     usCitizen: true
@@ -89,3 +88,26 @@ Donation(third):
     amountDonated: 100
     methodDonated: direct
 
+#story06:
+Candidate(abel):
+    candidateFirstName: Abel
+    candidateLastName: Abamo
+    candidateEmail: abel@abamo.com
+
+#story06:
+Candidate(celery):
+    candidateFirstName: Celery
+    candidateLastName: Hilton
+    candidateEmail: celery@hilton.com
+    
+#story06:
+Candidate(henry):
+    candidateFirstName: Henry
+    candidateLastName: Mustang
+    candidateEmail: henry@mustang.com
+    
+#story06:
+Candidate(donald):
+    candidateFirstName: Donald
+    candidateLastName: Triumph
+    candidateEmail: donald@triumph.com

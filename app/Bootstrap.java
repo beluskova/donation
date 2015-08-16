@@ -2,6 +2,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.List;
 
+import org.yaml.snakeyaml.Yaml;
+
 import play.*;
 import play.jobs.*;
 import play.libs.MimeTypes;
