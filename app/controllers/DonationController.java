@@ -46,8 +46,8 @@ public class DonationController extends Controller
       User user = User.findById(Long.parseLong(userId));
       Candidate candidate = user.candidate;                                      //story07
       addDonation(user, amountDonated, methodDonated, candidate);                //story07
-      Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated + "for candidate: "
-                  + candidate.candidateFirstName + candidate.candidateLastName);
+      Logger.info("amount donated: " + amountDonated + " " + "method donated: " + methodDonated + "\n for candidate: "
+                  + candidate.candidateFirstName + " " + candidate.candidateLastName);
       getPercentTargetAchieved(); // calling a helping method to display the progress bar correctly
       index();
     }
@@ -103,7 +103,7 @@ public class DonationController extends Controller
     long target = getDonationTarget();
     long percentachieved = (total * 100 / target);
     String progress = String.valueOf(percentachieved);
-    Logger.info(progress + " percent achieved for candidate: " + candidate.candidateFirstName + candidate.candidateLastName);
+    Logger.info(progress + " percent achieved for candidate: " + candidate.candidateFirstName + " " + candidate.candidateLastName);
     return progress;
   }
 
