@@ -46,7 +46,8 @@ public class DonationController extends Controller
       User user = User.findById(Long.parseLong(userId));
       Candidate candidate = user.candidate;                                      //story07
       addDonation(user, amountDonated, methodDonated, candidate);                //story07
-      Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
+      Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated + "for candidate: "
+                  + candidate.candidateFirstName + candidate.candidateLastName);
       getPercentTargetAchieved(); // calling a helping method to display the progress bar correctly
       index();
     }
@@ -102,7 +103,7 @@ public class DonationController extends Controller
     long target = getDonationTarget();
     long percentachieved = (total * 100 / target);
     String progress = String.valueOf(percentachieved);
-    Logger.info(progress + " percent achieved ");
+    Logger.info(progress + " percent achieved for candidate: " + candidate.candidateFirstName + candidate.candidateLastName);
     return progress;
   }
 
@@ -129,7 +130,7 @@ public class DonationController extends Controller
           donations.add(donation);
         }
       }
-      Logger.info("Displaying all donors for candidate" + candidate.candidateFirstName + "" + candidate.candidateLastName);
+      Logger.info("Displaying all donors for candidate " + candidate.candidateFirstName + " " + candidate.candidateLastName);
       render("DonationController/renderReport.html", user, donations, candidate);
     }
     else
