@@ -23,6 +23,7 @@
           <th class="center aligned">State</th>                      <!-- story02  -->
           <th class="center aligned">Amount ($)</th>
           <th class="center aligned">Method donated</th>
+          <th class="center aligned">Candidate</th>                  <!-- story07  -->
         </tr>
       </thead>
       <tbody>
@@ -33,6 +34,7 @@
           <td class="center aligned">${donation.from.state}</td>     <!-- story02  -->
           <td class="center aligned">${donation.amountDonated}</td>
           <td class="center aligned">${donation.methodDonated}</td>
+          <td class="center aligned"> ${donation.candidate.candidateFirstName} ${donation.candidate.candidateLastName}</td>     <!-- story07 -->
         </tr>
         #{/list}
       </tbody>

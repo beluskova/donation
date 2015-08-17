@@ -39,7 +39,7 @@ public class Accounts extends Controller
   //story01: age and state added here
   //story05: the register form has changed
   //story06: candidate added
-  public static void register (User user, String candidateEmail)
+  public static void register (User user,String candidateEmail)
       {
     //story05: obsolete code
     //Logger.info("New user: " + usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " "         
