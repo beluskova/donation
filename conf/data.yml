@@ -1,3 +1,45 @@
+#story06:
+Candidate(abel):
+    candidateFirstName: Abel
+    candidateLastName: Abamo
+    candidateEmail: abel@abamo.com
+    donation:
+             - donation01
+             - donation06
+    user:     
+         - homer
+
+
+#story06:
+Candidate(celery):
+    candidateFirstName: Celery
+    candidateLastName: Hilton
+    candidateEmail: celery@hilton.com
+    donation:
+             - donation02
+             - donation05
+    user: 
+         - marge
+         - maggie
+    
+#story06:
+Candidate(henry):
+    candidateFirstName: Henry
+    candidateLastName: Mustang
+    candidateEmail: henry@mustang.com
+    
+#story06:
+Candidate(donald):
+    candidateFirstName: Donald
+    candidateLastName: Triumph
+    candidateEmail: donald@triumph.com
+    donation:
+             - donation03
+             - donation04
+    user:
+         - lisa
+         - bart
+    
 User(homer):
     usCitizen: true
     firstName: Homer
@@ -12,7 +54,9 @@ User(homer):
     addrLine2: 3 Orchard Drive
     city: Manhattan
     zipcode: 025N Y264
-    
+    candidate: abel
+    donation: donation01, donation06
+        
 User(marge):
     usCitizen: true
     firstName: Marge
@@ -27,6 +71,8 @@ User(marge):
     addrLine2: 265 Belvedere Road
     city: Lawton
     zipcode: 026L W65
+    candidate: celery
+    donation: donation05
     
 User(lisa):
     usCitizen: true
@@ -42,6 +88,8 @@ User(lisa):
     addrLine2: 78 Lovely View
     city: Norfolk
     zipcode: 028N F78
+    candidate: donald
+    donation: donation04
     
 User(bart):
     usCitizen: true
@@ -57,6 +105,8 @@ User(bart):
     addrLine2: 366 Green Meadow
     city: Buffalo
     zipcode: 36B F99
+    candidate: donald
+    donation: donation03
     
 User(maggie):
     usCitizen: true
@@ -72,42 +122,41 @@ User(maggie):
     addrLine2: 56 Masons Avenue
     city: Oueens
     zipcode: 025N Y367
+    candidate: celery
+    donation: donation02
     
-Donation(first):
+Donation(donation01):
     from: homer
     amountDonated: 1000
     methodDonated: direct
+    candidate: abel
     
-Donation(second):
+Donation(donation02):
     from: maggie
     amountDonated: 500
     methodDonated: paypal
+    candidate: celery
     
-Donation(third):
+Donation(donation03):
     from: bart
     amountDonated: 100
     methodDonated: direct
-
-#story06:
-Candidate(abel):
-    candidateFirstName: Abel
-    candidateLastName: Abamo
-    candidateEmail: abel@abamo.com
-
-#story06:
-Candidate(celery):
-    candidateFirstName: Celery
-    candidateLastName: Hilton
-    candidateEmail: celery@hilton.com
+    candidate: donald
     
-#story06:
-Candidate(henry):
-    candidateFirstName: Henry
-    candidateLastName: Mustang
-    candidateEmail: henry@mustang.com
+Donation(donation04):
+    from: lisa
+    amountDonated: 1000
+    methodDonated: direct
+    candidate: donald
     
-#story06:
-Candidate(donald):
-    candidateFirstName: Donald
-    candidateLastName: Triumph
-    candidateEmail: donald@triumph.com
+Donation(donation05):
+    from: marge
+    amountDonated: 1000
+    methodDonated: direct
+    candidate: celery
+
+Donation(donation06):
+    from: homer
+    amountDonated: 100
+    methodDonated: paypal
+    candidate: abel

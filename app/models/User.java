@@ -1,7 +1,10 @@
 package models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import play.db.jpa.Model;
 
@@ -19,15 +22,15 @@ public class User extends Model
   public String addrLine2; // story05
   public String city; // story05
   public String zipcode; // story05
-
-  // story06:
-  @ManyToOne
+  @ManyToOne        // story06:
   public Candidate candidate;
+
+  
 
   // story01: age and state added here
   // story05: addrLine1, addrLine2, city, zipcode added here
   public User(boolean usCitizen, String firstName, String lastName, String age, String email, String password,
-              String state, String addrLine1, String addrLine2, String city, String zipcode)
+              String state, String addrLine1, String addrLine2, String city, String zipcode, Candidate candidate)
   {
     this.usCitizen = usCitizen;
     this.firstName = firstName;
@@ -40,6 +43,7 @@ public class User extends Model
     this.addrLine2 = addrLine2; // story05
     this.city = city; // story05
     this.zipcode = zipcode; // story05
+    this.candidate = candidate;
   }
 
   public static User findByEmail(String email)

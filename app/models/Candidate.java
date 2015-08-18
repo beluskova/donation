@@ -14,6 +14,10 @@ public class Candidate extends Model
   public String candidateFirstName;
   public String candidateLastName;
   public String candidateEmail;
+  @OneToMany
+  public List<User> users;
+  @OneToMany
+  public List<Donation> donations;
 
   public Candidate(String candidateFirstName, String candidateLastName, String candidateEmail)
   {
@@ -21,9 +25,6 @@ public class Candidate extends Model
     this.candidateLastName = candidateLastName;
     this.candidateEmail = candidateEmail;
   }
-
-  @OneToMany
-  public List<User> users;
 
   public static Candidate findByEmail(String candidateEmail)
   {

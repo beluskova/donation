@@ -1,7 +1,11 @@
 package models;
 
+import java.util.List;
+
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
+
 import play.db.jpa.Model;
 
 @Entity
@@ -14,6 +18,7 @@ public class Donation extends Model
   @ManyToOne
   public Candidate candidate;            //story07
 
+  
   public Donation(User from, long amountDonated, String methodDonated, Candidate candidate)
   {
     this.amountDonated = amountDonated;
