@@ -54,7 +54,7 @@ User(homer):
     addrLine2: 3 Orchard Drive
     city: Manhattan
     zipcode: 025N Y264
-    candidate: abel
+    candidate: abel, 
     donation: donation01, donation06
         
 User(marge):

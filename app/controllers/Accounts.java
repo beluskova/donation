@@ -13,8 +13,11 @@ public class Accounts extends Controller
    */
   public static void signup()
   {
-    List<Candidate> candidates = Candidate.findAll();     //story06
+/*    story09: obsolete code
+ * List<Candidate> candidates = Candidate.findAll();     //story06
     render(candidates);                                   //story06  
+*/  
+    render();  
   }
 
   /**
@@ -41,12 +44,14 @@ public class Accounts extends Controller
   //story06: candidate added
   public static void register (User user,String candidateEmail)
       {
-    //story05: obsolete code
-    //Logger.info("New user: " + usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " "         
-    //            + state);
-    //User user = new User(usCitizen, firstName, lastName, age, email, password, state);
-    Candidate candidate = Candidate.findByEmail(candidateEmail);
+       /*  story05: obsolete code 
+    * Logger.info("New user: " + usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " "         
+                + state);
+    User user = new User(usCitizen, firstName, lastName, age, email, password, state);*/
+   /* story09: obsolete code
+    * Candidate candidate = Candidate.findByEmail(candidateEmail);
     user.addCandidate(candidate);                //story06
+    */   
     user.save();                                 //story06
     Logger.info("Registration successful");
     session.put("logged_in_userid", user.id);

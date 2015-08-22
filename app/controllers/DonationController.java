@@ -27,9 +27,11 @@ public class DonationController extends Controller
     else
     {
       User user = User.findById(Long.parseLong(userId));
-      //Logger.info("Donation controller: user is " + user.email); //displaying twice
-      String donationprogress = getPercentTargetAchieved();
-      render(user, donationprogress); // the actual progress is displayed with a help of a progress bar
+      List<Candidate> candidates = Candidate.findAll(); // story09
+      // Logger.info("Donation controller: user is " + user.email); //displaying twice
+      // String donationprogress = getPercentTargetAchieved();
+      // render(user, donationprogress); // the actual progress is displayed with a help of a progress bar
+      render(user, candidates);
     }
   }
 
@@ -37,18 +39,19 @@ public class DonationController extends Controller
    * This method registers the actual amount the logged in user wishes to
    * donate. The method is called when user clicks the Donate button.
    */
-//story07: donation for candidate only added here
-  public static void donate(long amountDonated, String methodDonated)
+  // story07: donation for candidate only added here
+  public static void donate(long amountDonated, String methodDonated, String candidateEmail)
   {
     String userId = session.get("logged_in_userid");
     if (userId != null)
     {
       User user = User.findById(Long.parseLong(userId));
-      Candidate candidate = user.candidate;                                      //story07
-      addDonation(user, amountDonated, methodDonated, candidate);                //story07
+      Candidate candidate = Candidate.findByEmail(candidateEmail); // story09
+      //Candidate candidate = user.candidate;                      //story07 
+      addDonation(user, amountDonated, methodDonated, candidate); // story07
       Logger.info("amount donated: " + amountDonated + " " + "method donated: " + methodDonated + "\n for candidate: "
-                  + candidate.candidateFirstName + " " + candidate.candidateLastName);
-      getPercentTargetAchieved(); // calling a helping method to display the progress bar correctly
+          + candidate.candidateFirstName + " " + candidate.candidateLastName);
+      // getPercentTargetAchieved(); // calling a helping method to display the progress bar correctly
       index();
     }
     else
@@ -62,21 +65,20 @@ public class DonationController extends Controller
    * A helping method to register a single donation. Parameters are user, the
    * amount they wish to donate and a method used to donate.
    */
-//story07: candidate added here
+  // story07: candidate added here
   private static void addDonation(User user, long amountDonated, String methodDonated, Candidate candidate)
   {
     Donation bal = new Donation(user, amountDonated, methodDonated, candidate);
     bal.save();
   }
 
-  /**
+  // story09: obsolete methods:
+  /*  *//**
    * A helping method to set the target amount.
    */
-  private static long getDonationTarget()
-  {
-    return 20000;
-  }
-
+  /*
+   * private static long getDonationTarget() { return 20000; }
+   */
   /**
    * This method calculates the progress percent of the total amount to be
    * achieved. Initially it iterates through the list of all donations and adds
@@ -85,58 +87,37 @@ public class DonationController extends Controller
    * returned as a String.
    * 
    */
-//story07: report for candidate only added here
-  public static String getPercentTargetAchieved()
-  {
-    String userId = session.get("logged_in_userid");
-    User user = User.findById(Long.parseLong(userId));
-    Candidate candidate = user.candidate;                       //story07  
-    List<Donation> allDonations = Donation.findAll();
-    long total = 0;
-    for (Donation donation : allDonations)
-    {
-      if (donation.candidate == candidate)                      //story07
-      {
-        total += donation.amountDonated;
-      }
-    }
-    long target = getDonationTarget();
-    long percentachieved = (total * 100 / target);
-    String progress = String.valueOf(percentachieved);
-    Logger.info(progress + " percent achieved for candidate: " + candidate.candidateFirstName + " " + candidate.candidateLastName);
-    return progress;
-  }
-
-  /**
-   * This method displays the report page for the logged-in user only. When the
-   * page is displayed, the method goes through the list of all donations and
-   * displays them all. For the non-logged-in user the login page comes up.
+  /*
+   * //story07: report for candidate only added here public static String
+   * getPercentTargetAchieved(String candidateEmail) { String userId =
+   * session.get("logged_in_userid"); User user =
+   * User.findById(Long.parseLong(userId)); Candidate candidate =
+   * user.candidate; //story07 List<Donation> allDonations = Donation.findAll();
+   * long total = 0; for (Donation donation : allDonations) { if
+   * (donation.candidate == candidate) //story07 { total +=
+   * donation.amountDonated; } } long target = getDonationTarget(); long
+   * percentachieved = (total * 100 / target); String progress =
+   * String.valueOf(percentachieved); Logger.info(progress +
+   * " percent achieved for candidate: " + candidate.candidateFirstName + " " +
+   * candidate.candidateLastName); return progress; }
+   *//**
+   * This method displays the report page for the logged-in user only. When
+   * the page is displayed, the method goes through the list of all donations
+   * and displays them all. For the non-logged-in user the login page comes up.
    */
-//story07: report for candidate only added here
-  public static void renderReport()
-  {
-    String userId = session.get("logged_in_userid");
-    if (userId != null)
-    {
-      User user = User.findById(Long.parseLong(userId));
-      List<Donation> donations = new ArrayList();
-      List<Donation> allDonations = Donation.findAll();
-      // following added for story07:
-      Candidate candidate = user.candidate;                       
-      for (Donation donation : allDonations)
-      {
-        if (donation.candidate == candidate)
-        {
-          donations.add(donation);
-        }
-      }
-      Logger.info("Displaying all donors for candidate " + candidate.candidateFirstName + " " + candidate.candidateLastName);
-      render("DonationController/renderReport.html", user, donations, candidate);
-    }
-    else
-    {
-      Logger.info("User not logged in");
-      Accounts.login();
-    }
-  }
+  /*
+   * //story07: report for candidate only added here public static void
+   * renderReport() { String userId = session.get("logged_in_userid"); if
+   * (userId != null) { User user = User.findById(Long.parseLong(userId));
+   * List<Donation> donations = Donation.findAll(); List<Candidate> candidates =
+   * Candidate.findAll(); List<User> users = User.findAll(); // following added
+   * for story07: Candidate candidate = user.candidate; for (Donation donation :
+   * allDonations) { if (donation.candidate == candidate) {
+   * donations.add(donation); } }
+   * Logger.info("Displaying all donors for candidate " +
+   * candidate.candidateFirstName + " " + candidate.candidateLastName);
+   * render("DonationController/renderReport.html", users, donations,
+   * candidates); } else { Logger.info("User not logged in"); Accounts.login();
+   * } }
+   */
 }

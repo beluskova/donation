@@ -16,20 +16,39 @@
     <h4>Please give generously</h4>
 <!-- donation segment -->
     <form action="/donation/donate" method="POST" class="ui form segment">
-      <div class="ui two column grid">
+      <div class="ui three column grid">
         <div class="six wide column">
           <img class="ui tiny left floated jumping picture image" src="/public/images/statue of liberty2.jpg">
+     <!--  story09: candidate selection dropdown -->
+                        <div class="ui basic compact horizontal segment">
+               <div class="five wide field">
+            <label>Candidate</label>
+            <div class="ui selection dropdown">
+            <input name="candidateEmail" type="hidden"> 
+              <i class="dropdown icon"></i>
+              <div class="default text">Select Candidate</div>
+              <div class="menu">
+                #{list items: candidates, as: 'candidate'}
+                <div class="item" data-value="${candidate.candidateEmail}"> 
+                ${candidate.candidateFirstName} ${candidate.candidateLastName}
+                </div>
+                #{/list}
+              </div>
+            </div>
+          </div>
+<!-- story09: candidate selection dropdown -->
 <!-- amount dropdown menu  -->
-          <div class="ui basic compact horizontal segment">
-            <div class="label">Select an amount:</div>
+              <div class="five wide field">
+            <label>Amount:</label>
             <div class="ui selection dropdown">
               <input name="amountDonated" type="hidden"> <i class="dropdown icon"></i>
-              <div class="default text">Amount</div>
+              <div class="default text">Select amount</div>
               <div class="menu">
                 <div class="item" data-value="100">$100</div>
                 <div class="item" data-value="500">$500</div>
                 <div class="item" data-value="1000">$1000</div>
               </div>
+            </div>
             </div>
             <button class="ui lightgreen bottom attached submit button">
               <i class="gift icon"></i> Donate
@@ -52,8 +71,7 @@
             <div class="field">
               <div class="ui radio checkbox">
                 <input name="methodDonated" value="direct" type="radio">
-                <label for="methodDonated"> <i
-                  class="money icon"> </i>Direct
+                <label for="methodDonated"> <i class="money icon"> </i>Direct
                 </label>
               </div>
             </div>
@@ -61,9 +79,10 @@
         </div>
       </div>
     </form>
-<!-- end of donation segment  -->
-    <h4>Amount donated to support Homer for president:</h4>
-    <!-- progress bar  -->
+<!-- end of donation segment -->
+<!-- story09: progress bar removed from Donation page  -->
+<!--     <h4>Amount donated to support Homer for president:</h4>
+    progress bar 
     <div class="ui progress" id="progress">
       <div class="lightgreen bar"></div>
       <div class="progress"></div>

@@ -3,6 +3,7 @@ package models;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -27,10 +28,13 @@ public class User extends Model
 
   
 
+  
+
   // story01: age and state added here
   // story05: addrLine1, addrLine2, city, zipcode added here
+  // story09: Candidate candidate removed
   public User(boolean usCitizen, String firstName, String lastName, String age, String email, String password,
-              String state, String addrLine1, String addrLine2, String city, String zipcode, Candidate candidate)
+              String state, String addrLine1, String addrLine2, String city, String zipcode)
   {
     this.usCitizen = usCitizen;
     this.firstName = firstName;
@@ -43,7 +47,6 @@ public class User extends Model
     this.addrLine2 = addrLine2; // story05
     this.city = city; // story05
     this.zipcode = zipcode; // story05
-    this.candidate = candidate;
   }
 
   public static User findByEmail(String email)
@@ -51,6 +54,10 @@ public class User extends Model
     return find("email", email).first();
   }
 
+  public static User findByState(String state)
+  {
+    return find("state", state).first();
+  }
   public boolean checkPassword(String password)
   {
     return this.password.equals(password);
