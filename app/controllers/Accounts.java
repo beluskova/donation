@@ -52,6 +52,10 @@ public class Accounts extends Controller
     * Candidate candidate = Candidate.findByEmail(candidateEmail);
     user.addCandidate(candidate);                //story06
     */   
+    if (user.state == null)                      //to search for users who are not registered in any US State
+    {
+      user.state = "Not US Citizen";
+    }
     user.save();                                 //story06
     Logger.info("Registration successful");
     session.put("logged_in_userid", user.id);
