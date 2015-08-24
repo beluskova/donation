@@ -25,20 +25,31 @@ public class CandidateController extends Controller
 
   public static void filterCandidates(String candidateEmail)
   {
-    List<Candidate> candidates = Candidate.findAll();
-    List<User> users = User.findAll();
-    List<Donation> donations = new ArrayList();
-    List<Donation> allDonations = Donation.findAll();
-    Candidate candidate = Candidate.findByEmail(candidateEmail);
-    for (Donation donation : allDonations)
+    String userId = session.get("logged_in_userid");             //to prevent from the non-logged-in users to be able see the Report
+    if (userId != null)
     {
-      if (donation.candidate == candidate)
+      List<Candidate> candidates = Candidate.findAll();
+      List<User> users = User.findAll();
+      List<Donation> donations = new ArrayList();
+      List<Donation> allDonations = Donation.findAll();
+      Candidate candidate = Candidate.findByEmail(candidateEmail);
+      for (Donation donation : allDonations)
       {
-        donations.add(donation);
+        if (donation.candidate == candidate)
+        {
+          donations.add(donation);
+        }
       }
+      String donationprogress = getPercentTargetAchieved(candidateEmail);
+      Logger.info("Displaying list of donations for candidate " + candidate.candidateFirstName + " "
+          + candidate.candidateLastName);
+      render("CandidateController/index.html", users, donations, candidates, candidate, donationprogress);
     }
-    String donationprogress = getPercentTargetAchieved(candidateEmail);
-    render("CandidateController/index.html", users, donations, candidates, candidate, donationprogress);
+    else
+    {
+      Logger.info("Can't display the donation for candidates - user not logged in");
+      Accounts.login();
+    }
   }
 
   /**
