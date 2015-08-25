@@ -1,0 +1,41 @@
+#{extends 'main.html' /} #{set title:'Administrator Login' /}
+ <!-- a new view created for Story10: a login page for Administrator log-in only -->
+<!-- navigation bar  -->
+<div class="ui inverted right fixed pointing labeled icon vertical menu" style="padding-left: 20px">
+  <a class="ui item" href="/home"> <i class="huge home icon"> </i> Home </a> 
+  <a class="ui active item" href="/admin"><i class="key icon"> </i> Admin Log</a> 
+</div>
+<!-- banner picture  -->
+<div class="intro">
+  <div class="ui grid">
+    <div class="four wide center aligned column">
+     <h1 class="sigmar">LOG IN</h1>    
+    </div>
+  </div>
+</div>
+<div class="ui grid">
+  <div class="sixteen wide center aligned column">
+    <div class="bodybasic2">
+<!-- login form  -->
+      <div class="ui inverted lightgreen1 form segment" style="padding-top:30px" style="padding-bottom: 70px">
+        <h3 class="sigmar3" style="padding-bottom: 40px">WARNING: Restricted access - Administrator only !!!</h3> 
+          <form class="ui form" action="/admin/authenticate" method="POST">
+          <div class="field">
+            <label> Username: </label> 
+              <input type="text" name="adminEmail" placeholder="Administrator Email">
+          </div>
+          <div class="field">
+            <label> Password: </label> 
+              <input type="password" name="adminPassword" placeholder="Administrator Password">
+          </div>
+           <div class="ui error message"></div>
+          <button class="ui black submit button">Login</button>
+          <h1></h1>
+        </form>
+      </div> 
+<!-- end of login form  -->
+    </div> 
+  </div>
+</div>
+
+<script src="@{'/public/javascripts/admin.js'}"></script>

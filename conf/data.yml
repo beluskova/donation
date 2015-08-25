@@ -1,3 +1,8 @@
+#story10:
+Admin(admin):
+   adminEmail: admin
+   adminPassword: secret
+   
 #story06:
 Candidate(abel):
     candidateFirstName: Abel
@@ -160,3 +165,4 @@ Donation(donation06):
     amountDonated: 100
     methodDonated: paypal
     candidate: abel
+    

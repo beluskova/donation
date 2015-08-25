@@ -1,146 +1,152 @@
-.intro { 
+.intro {
 	min-width: 470px;
 	width: 100%;
-	height:380px;
+	height: 380px;
 	background-image: url('/public/images/statue4.jpg');
 	margin-top: -50px;
 	margin-left: -10px;
-	}
+}
 
-.bodybasic
-{
-	background-color:#bdccad!important;
-    margin-right: 70px;
-	margin-left:0px;
-	padding-top:60px;
+.bodybasic {
+	background-color: #bdccad !important;
+	margin-right: 70px;
+	margin-left: 0px;
+	padding-top: 60px;
 	padding-bottom: 50px;
 }
 
-.bodybasic2
-{
-	background-color:#ffffff;
-    margin-right: 100px;
-	margin-left:-10px;
+.bodybasic2 {
+	background-color: #ffffff;
+	margin-right: 100px;
+	margin-left: -10px;
 }
 
-.bodybasic3
-{
-	background-color:#ffffff;
-    margin-right: 150px;
-	margin-left:15px;
-	padding-top:60px;
+.bodybasic3 {
+	background-color: #ffffff;
+	margin-right: 150px;
+	margin-left: 15px;
+	padding-top: 60px;
 }
 
 .navbar {
-    font-weight: bold;
-    color: #0033CC;
-    text-decoration: none;
+	font-weight: bold;
+	color: #0033CC;
+	text-decoration: none;
 }
 
 .sigmar {
-	padding-top:180px;
-	color:#bdccad;
+	padding-top: 180px;
+	color: #bdccad;
 	font-weight: bold;
 	font-size: 4em;
 	font-style: italic;
 	font-family: chewy, sigmar one, georgia, sans-serif;
 	position: bottom left:
-	
 }
 
 .sigmar1 {
-	color:#000000;
+	color: #000000;
 	font-size: 1.4em;
 	font-style: oblique;
-	font-family: chewy, sigmar one, georgia, sans-serif;	
+	font-family: chewy, sigmar one, georgia, sans-serif;
 }
 
 .sigmar2 {
-	color:#000000;
+	color: #000000;
 	font-size: 1.4em;
-	font-family: sigmar one, georgia, sans-serif;	
+	font-family: sigmar one, georgia, sans-serif;
 }
 
 .sigmar3 {
-	color:#ffffff;
+	color: #ffffff;
 	font-size: 1em;
-	font-family: sans-serif;	
+	font-family: sans-serif;
 }
 
 .sigmar4 {
-	color:#000000;
+	color: #000000;
 	font-size: 1em;
-	font-family: sans-serif;	
+	font-family: sans-serif;
+}
+
+.sigmar5 {
+	color: #AAB89C !important;
+	font-weight: bold;
+	font-size: 1.4em;
+	font-style: italic;
+	font-family: sans-serif;
 }
 
 .navlink {
-    font-weight: bold;
-    color:#ffffff;
-    /* color: #336699; */
-    text-decoration: none;
+	font-weight: bold;
+	color: #ffffff;
+	/* color: #336699; */
+	text-decoration: none;
 }
 
 .ui.inverted.lightblue.segment {
-  background-color: #E4F0FE!important;
-  color: #000000 !important;
+	background-color: #E4F0FE !important;
+	color: #000000 !important;
 }
+
 .ui.inverted.lightgreen.form {
-  background-color: #bdccad!important;
-  color: #000000 !important;
-  padding-left: 115px;
+	background-color: #bdccad !important;
+	color: #000000 !important;
+	padding-left: 115px;
 }
 
 .ui.inverted.lightgreen1.form {
-  background-color: #bdccad!important;
-  color: #000000 !important;
-  padding-left: 115px;
-  padding-right: 150px;
+	background-color: #bdccad !important;
+	color: #000000 !important;
+	padding-left: 115px;
+	padding-right: 150px;
 }
 
-.ui.compact.lightgreen.segment {
-  background-color: #bdccad!important;
-  color: #000000 !important;
+.ui.lightgreen.segment {
+	background-color: #bdccad !important;
+	color: #000000 !important;
 }
 
 .ui.lightgreen.button {
-  background-color: #AAB89C!important;
-  color: #000000 !important;
+	background-color: #AAB89C !important;
+	color: #000000 !important;
 }
 
 .lightgreen.bar {
-  background-color:#AAB89C!important;
-  color: #000000 !important;
+	background-color: #AAB89C !important;
+	color: #000000 !important;
 }
 
 .ui.lightgreen.label {
-  background-color: #AAB89C!important;
-  color: #000000 !important;
-  margin-right: 55px;
+	background-color: #AAB89C !important;
+	color: #000000 !important;
+	margin-right: 55px;
 }
 
 .ui.button {
-    display: table;
-    margin: 0 auto;
+	display: table;
+	margin: 0 auto;
 }
 
-.ui.label1
-{
-   width: 190px;
-   margin-top: 20px;
-   background-color: #C4CDBA;
+.ui.label1 {
+	width: 190px;
+	margin-top: 20px;
+	background-color: #C4CDBA;
 }
 
-.ui.floating.error
-{
-   width: 87.5%;
+.ui.floating.error {
+	width: 87.5%;
 }
 
-.ui.floating1.error
-{
-   width: 64%;
+.ui.floating1.error {
+	width: 64%;
 }
 
-.default.text
-{
-	color: #000000 !important;	
+.default.text {
+	color: #000000 !important;
+}
+
+.lightgreen.head {
+	background-color: #AAB89C !important;
+	color: #000000 !important;
 }

@@ -27,6 +27,10 @@ GET    /donation/filterCandidates               CandidateController.filterCandid
 GET    /donation/filterDonors                   Report.filterDonors
 GET    /donation/filterStates                   Report.filterStates
 
+#Administrator
+GET    /admin                                   Administrator.login
+POST   /admin/authenticate                      Administrator.authenticate
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
