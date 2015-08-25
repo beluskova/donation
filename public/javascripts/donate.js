@@ -2,13 +2,20 @@ $('.ui.dropdown').dropdown();
 
 $('.ui.form')
 .form({
-  amountDonated: {
-    identifier: 'amountDonated',
+	candidateEmail: {
+    identifier: 'candidateEmail',
     rules: [{
         type: 'empty',
-        prompt: 'Please select an amount to donate'
+        prompt: 'Please select a Candidate to whom you wish to donate'
       }]
-  }
+  },
+amountDonated: {
+  identifier: 'amountDonated',
+  rules: [{
+      type: 'empty',
+      prompt: 'Please select an amount to donate'
+    }]
+}
 });
 
 $('.jumping.picture')
