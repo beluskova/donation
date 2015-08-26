@@ -1,0 +1,38 @@
+ #{extends 'main.html' /} #{set title:'Create Office' /}
+ <!-- a new view created for Story11: creating a new office for the Candidate -->
+<!-- navigation bar  -->
+<div class="ui inverted right fixed pointing labeled icon vertical menu" style="padding-left: 20px">
+  <a class="ui item" href="/admin/home"><i class="area chart icon"></i> Admin Home </a> 
+  <a class="ui item" href="/candidate"><i class="spy icon"></i> Register Candidate </a> 
+  <a class="ui active item" href="/office"><i class="coffee icon"></i> Create Office </a>
+  <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
+</div>
+<!-- end of navigation bar -->
+<div class="bodybasic4">
+  <div class="ui form segment" style="padding-top: 30px">
+    <h1 class="ui header center aligned">Create a new office here:</h1>
+<!--create office form  -->
+    <form class="ui form" action="/createOffice" method="POST">
+      <div class="two fields">
+        <div class="required field">
+          <label> Office Title: </label> <input type="text" name="office.title" placeholder="Office Title">
+        </div>
+        <div class="required field">
+          <label> Office Phone Number: </label> <input type="text" name="office.phone" placeholder="Office Phone Number">
+        </div>
+      </div>
+      <div class="field">
+        <label> Office Description: </label> <input type="text"name="office.description" placeholder="Office Description here...">
+      </div>
+      <div class="ui floating error message"></div>                            <!--  if office.js conditions for form are not met -->
+      <div class="ui buttons">
+        <div class="ui black submit button">Create Office</div>
+        <div class="ui lightgreen button">
+          <a class="navlink1" href="/admin/home">Cancel</a>
+        </div>
+      </div>
+    </form>
+<!-- end of form  -->
+  </div>
+</div>
+<script src="@{'/public/javascripts/office.js'}"></script>

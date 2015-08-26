@@ -1,28 +1,30 @@
  #{extends 'main.html' /} #{set title:'Administrator Home' /}
- <!-- a new view created for Story10: displaying list of all Donors and all Candidates and their details for Administrator only -->
+<!-- a new view created for Story10: displaying list of all Donors and all Candidates and their details for Administrator only -->
 <!-- navigation bar  -->
 <div class="ui inverted right fixed pointing labeled icon vertical menu" style="padding-left: 20px">
-  <a class="ui active item" href="/admin"><i class="area chart icon"></i> Admin Home </a> 
+  <a class="ui active item" href="/admin/home"><i class="area chart icon"></i> Admin Home </a> 
+  <a class="ui item" href="/candidate"><i class="spy icon"></i> Register Candidate </a>                          <!-- story11  -->
+  <a class="ui item" href="/office"><i class="coffee icon"></i> Create Office </a>                               <!-- story11  -->
   <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
 </div>
 <!-- end of navigation bar -->
-<div class="bodybasic3">
+<div class="bodybasic4">
 <!-- report table for Donors -->
   <div class="ui segment">
-    <h3 class="sigmar5"> Donors: </h3>
+    <h3 class="sigmar5">Donors:</h3>
     <table class="ui celled table">
       <thead>
         <tr class="lightgreen head center aligned">
           <th class="lightgreen head center aligned">Donor Name</th>
-          <th class="lightgreen head center aligned">Donor State</th>                                                                   
-          <th class="lightgreen head center aligned">Donor Email</th>                                                                                                                      
+          <th class="lightgreen head center aligned">Donor State</th>
+          <th class="lightgreen head center aligned">Donor Email</th>
         </tr>
       </thead>
       <tbody>
         #{list items: donations, as: 'donation'}
         <tr class="center aligned">
           <td class="center aligned">${donation.from.firstName} ${donation.from.lastName}</td>
-          <td class="center aligned">${donation.from.state}</td>                                               
+          <td class="center aligned">${donation.from.state}</td>
           <td class="center aligned">${donation.from.email}</td>
         </tr>
         #{/list}
@@ -36,19 +38,45 @@
     <table class="ui celled table">
       <thead>
         <tr class="center aligned">
-          <th class="lightgreen head center aligned">Candidate Name</th>                                                                
-          <th class="lightgreen head center aligned">Candidate Email</th>                                                                                                                      
+          <th class="lightgreen head center aligned">Candidate Name</th>
+          <th class="lightgreen head center aligned">Candidate Email</th>
+          <th class="lightgreen head center aligned">Candidate Office</th>                                       <!-- story11  -->
         </tr>
       </thead>
       <tbody>
         #{list items: candidates, as: 'candidate'}
         <tr class="center aligned">
-          <td class="center aligned">${candidate.candidateFirstName} ${candidate.candidateLastName}</td>                                            
+          <td class="center aligned">${candidate.candidateFirstName} ${candidate.candidateLastName}</td>
           <td class="center aligned">${candidate.candidateEmail}</td>
+          <td class="center aligned">${candidate.office.title}</td>                                              <!-- story11  -->
         </tr>
         #{/list}
       </tbody>
     </table>
   </div>
 <!-- end of report table for Candidates -->
+<!-- story11: report table for Offices -->
+  <div class="ui raised segment">
+    <h3 class="sigmar5">Offices:</h3>
+    <table class="ui celled table">
+      <thead>
+        <tr class="center aligned">
+          <th class="lightgreen head center aligned">Office Name</th>
+          <th class="lightgreen head center aligned">Phone Number</th>
+          <th class="lightgreen head center aligned">Description</th>                                       
+        </tr>
+      </thead>
+      <tbody>
+        #{list items: offices, as: 'office'}
+        <tr class="center aligned">
+          <td class="center aligned">${office.title}</td>
+          <td class="center aligned">${office.phone}</td>
+          <td class="center aligned">${office.description}</td>                                              
+        </tr>
+        #{/list}
+      </tbody>
+    </table>
+  </div>
+<!-- end of report table for Candidates -->
+</div>
 <script src="@{'/public/javascripts/report.js'}"></script>

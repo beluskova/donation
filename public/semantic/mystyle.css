@@ -28,6 +28,13 @@
 	padding-top: 60px;
 }
 
+.bodybasic4 {
+	background-color: #ffffff;
+	margin-right: 185px;
+	margin-left: 15px;
+	padding-top: 60px;
+}
+
 .navbar {
 	font-weight: bold;
 	color: #0033CC;
@@ -80,6 +87,13 @@
 .navlink {
 	font-weight: bold;
 	color: #ffffff;
+	/* color: #336699; */
+	text-decoration: none;
+}
+
+.navlink1{
+	font-weight: bold;
+	color: #000000;
 	/* color: #336699; */
 	text-decoration: none;
 }

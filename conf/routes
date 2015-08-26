@@ -30,6 +30,13 @@ GET    /donation/filterStates                   Report.filterStates
 #Administrator
 GET    /admin                                   Administrator.login
 POST   /admin/authenticate                      Administrator.authenticate
+GET    /admin/home                              Administrator.index
+GET    /candidate                               Administrator.candidate
+POST   /admin/register                          Administrator.registerCandidate
+
+#Create Office
+GET    /office                                  OfficeController.index
+POST   /createOffice                            OfficeController.createOffice
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

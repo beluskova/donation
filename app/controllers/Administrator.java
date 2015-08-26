@@ -4,7 +4,7 @@
 package controllers;
 
 import java.util.List;
-
+import org.json.simple.JSONObject;
 import play.*;
 import play.mvc.*;
 import models.*;
@@ -19,13 +19,14 @@ public class Administrator extends Controller
    */
   public static void index()
   {
-    String adminId = session.get("logged_in_adminid");
+    String adminId = session.get("logged_in_adminid"); // to display page to logged-in administrator only
     if (adminId != null)
     {
       List<Donation> donations = Donation.findAll();
       List<Candidate> candidates = Candidate.findAll();
       List<User> users = User.findAll();
-      render("Administrator/index.html", users, donations, candidates);
+      List<Office> offices = Office.findAll();                                          //story11
+      render("Administrator/index.html", users, donations, candidates, offices);
     }
     else
     {
@@ -78,10 +79,7 @@ public class Administrator extends Controller
   public static void authenticate(String adminEmail, String adminPassword)
   {
     Logger.info("Attempting to authenticate with " + adminEmail + " : " + adminPassword);
-    Admin admin = Admin.findByEmail(adminEmail); // a helping method introduced
-                                                 // in an Admin model to look
-                                                 // for admin's details in the
-                                                 // database
+    Admin admin = Admin.findByEmail(adminEmail); // a helping method introduced in an Admin model to look for admin's details in the database
     if ((adminEmail != null) && (admin.checkPassword(adminPassword) == true))
     {
       Logger.info("Successfull authentication of Administrator");
@@ -90,7 +88,65 @@ public class Administrator extends Controller
     }
     else
     {
-      Logger.info("Authentication failed");
+      Logger.info("Authentication of Administrator failed");
+      login();
+    }
+  }
+
+  /**
+   * A method to load the page where new Candidate is created
+   */
+  public static void candidate()
+  {
+    String adminId = session.get("logged_in_adminid");                  // to display page to logged-in administrator only
+    if (adminId != null)
+    {
+      List<Office> offices = Office.findAll();
+      Logger.info("Administrator: Register a new Candidate");
+      render("Administrator/registerCandidate.html", offices);
+    }
+    else
+    {
+      Logger.info("Admin authentication failed");
+      login();
+    }
+  }
+
+  /**
+   * A method to register new Candidate along with his Office. The method checks
+   * first whether Candidate is already registered, considering the email
+   * address is a primary key.
+   * 
+   * @param candidate
+   *          Candidate object to be registered
+   * @param title
+   *          Office object to be added to Candidate, identified by it's title
+   */
+  public static void registerCandidate(Candidate candidate, String title)
+  {
+    String adminId = session.get("logged_in_adminid");                 // to display page to logged-in administrator only
+    if (adminId != null)
+    {
+      Candidate candidate1 = Candidate.findByEmail(candidate.candidateEmail);
+      if (candidate1 != null)                                         //checking whether Candidate already exists
+      {
+        Logger.info("Candidate " + candidate.candidateFirstName + " " + candidate.candidateLastName
+                   + " is already registered");
+        index();
+      }
+      else
+      {
+        Office office = Office.findByTitle(title);
+        candidate.addOffice(office);
+        Logger.info("Succesful registration of new Candidate: " + candidate.candidateFirstName + " "
+                     + candidate.candidateLastName);
+        candidate.save();
+        index();
+      }
+    }
+    else
+    {
+      Logger.info("Admin authentication failed");
       login();
     }
   }

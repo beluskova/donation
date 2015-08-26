@@ -2,12 +2,37 @@
 Admin(admin):
    adminEmail: admin
    adminPassword: secret
-   
+
+#story11  
+Office(president):
+    title: president
+    phone: 01 234567
+    description: "Where coffee is free"
+  
+#story11  
+Office(vicepresident):
+    title: vicepresident
+    phone: 023 45678
+    description: "Where tee is free" 
+
+#story11  
+Office(mayor):
+    title: mayor
+    phone: 055 234 234
+    description: "Where water is free"
+
+#story11  
+Office(canteen):
+    title: canteen
+    phone: 065 256789
+    description: "Where you pay for everything"
+    
 #story06:
 Candidate(abel):
     candidateFirstName: Abel
     candidateLastName: Abamo
     candidateEmail: abel@abamo.com
+    office: president
     donation:
              - donation01
              - donation06
@@ -20,6 +45,8 @@ Candidate(celery):
     candidateFirstName: Celery
     candidateLastName: Hilton
     candidateEmail: celery@hilton.com
+    candidatePassword: secret
+    office: vicepresident
     donation:
              - donation02
              - donation05
@@ -32,12 +59,16 @@ Candidate(henry):
     candidateFirstName: Henry
     candidateLastName: Mustang
     candidateEmail: henry@mustang.com
+    candidatePassword: secret
+    office: president
     
 #story06:
 Candidate(donald):
     candidateFirstName: Donald
     candidateLastName: Triumph
     candidateEmail: donald@triumph.com
+    office: mayor
+    candidatePassword: secret
     donation:
              - donation03
              - donation04

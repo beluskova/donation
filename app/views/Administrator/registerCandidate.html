@@ -1,0 +1,51 @@
+#{extends 'main.html' /} #{set title:'Register Candidate' /}
+<!-- a new view created for Story11: Administrator only: Register a new Candidate -->
+<!-- navigation bar  -->
+<div class="ui inverted right fixed pointing labeled icon vertical menu" style="padding-left: 20px">
+  <a class="ui item" href="/admin/home"> <i class="area chart icon"> </i> Admin Home </a> 
+  <a class="ui active item" href="/candidate"><i class="spy icon"></i> Register Candidate </a>                  <!-- story11  -->
+  <a class="ui item" href="/office"><i class="coffee icon"></i> Create Office </a>                              <!-- story11  -->
+  <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>
+</div>
+<div class="bodybasic4">
+<!-- Candidate registration form  -->
+  <div class="ui form segment" style="padding-top: 30px">
+    <h1 class="ui header center aligned">Register new Candidate here:</h1>
+    <form class="ui form" action="/admin/register" method="POST">
+      <div class="two fields">
+        <div class="required field">
+          <label> First name: </label> 
+          <input type="text" name="candidate.candidateFirstName" placeholder="Candidate First Name">
+        </div>
+        <div class="field">
+          <label> Last Name: </label> 
+          <input type="text" name="candidate.candidateLastName" placeholder="Candidate Last Name">
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="required field">
+          <label> Email: </label> 
+          <input type="text" name="candidate.candidateEmail" placeholder="Candidate Email">
+        </div>
+        <div class="required field">
+          <label> Password: </label> 
+          <input type="password" name="candidate.candidatePassword" placeholder="Candidate Password">
+        </div>
+      </div>
+      <div class="ui selection dropdown">
+        <input name="title" type="hidden"> <i class="dropdown icon"></i>
+        <div class="default text"> <i class="coffee icon"></i>Select Office</i></div>
+        <div class="menu">
+          #{list items: offices, as: 'office'}
+          <div class="item" data-value="${office.title}">${office.title}</div>
+          #{/list}
+        </div>
+      </div>
+      <div class="ui error message"></div>
+      <button class="ui black submit button">Register Candidate</button>
+    </form>
+  </div>
+<!-- end of Candidate registration form  -->
+</div>
+
+<script src="@{'/public/javascripts/candidate.js'}"></script>

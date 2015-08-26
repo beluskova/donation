@@ -1,12 +1,9 @@
 package models;
-
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-
 import play.db.jpa.Model;
 
 @Entity
@@ -25,10 +22,6 @@ public class User extends Model
   public String zipcode; // story05
   @ManyToOne        // story06:
   public Candidate candidate;
-
-  
-
-  
 
   // story01: age and state added here
   // story05: addrLine1, addrLine2, city, zipcode added here
@@ -62,7 +55,6 @@ public class User extends Model
   {
     return this.password.equals(password);
   }
-
   // story06:
   public void addCandidate(Candidate candidate)
   {

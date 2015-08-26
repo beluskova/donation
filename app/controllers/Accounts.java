@@ -1,7 +1,5 @@
 package controllers;
-
 import java.util.List;
-
 import play.*;
 import play.mvc.*;
 import models.*;
@@ -102,8 +100,7 @@ public class Accounts extends Controller
   public static void authenticate(String email, String password)
   {
     Logger.info("Attempting to authenticate with " + email + ":" + password);
-    User user = User.findByEmail(email); // a helping method introduced in a
-                                         // User model
+    User user = User.findByEmail(email); // a helping method introduced in a User model
     if ((user != null) && (user.checkPassword(password) == true))
     {
       Logger.info("Successfull authentication of  " + user.firstName + " " + user.lastName);
