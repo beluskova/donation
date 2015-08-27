@@ -72,7 +72,7 @@ public class CandidateController extends Controller
         total += donation.amountDonated;
       }
     }
-    long target = getDonationTarget();
+    long target = getDonationTarget(candidateEmail);                     //story12
     long percentachieved = (total * 100 / target);
     String progress = String.valueOf(percentachieved);
     Logger.info(progress + " percent achieved for candidate: " + candidate.candidateFirstName + " "
@@ -83,9 +83,12 @@ public class CandidateController extends Controller
   /**
    * A helping method to set the target amount
    */
-  private static long getDonationTarget()
+  
+  //Story12: candidateEmail is added to identify the candidate for whom the target amount is set
+  private static long getDonationTarget(String candidateEmail)         
   {
-    return 20000;
-  }
+    Candidate candidate = Candidate.findByEmail(candidateEmail);         //story12
+    return candidate.target;                                             //story12
+  }   
 
 }

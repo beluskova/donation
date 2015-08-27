@@ -31,7 +31,10 @@
           <label> Password: </label> 
           <input type="password" name="candidate.candidatePassword" placeholder="Candidate Password">
         </div>
-      </div>
+      </div>     
+      <div class="two fields">
+        <div class="field">
+         <label> Candidate Office: </label>
       <div class="ui selection dropdown">
         <input name="title" type="hidden"> <i class="dropdown icon"></i>
         <div class="default text"> <i class="coffee icon"></i>Select Office</i></div>
@@ -41,6 +44,14 @@
           #{/list}
         </div>
       </div>
+        </div>
+        <div class="field">
+          <label> Target amount ($): </label>                                                                       <!-- story12  -->
+          <input type="text" name="candidate.target" placeholder="Enter Amount in US Dollars"
+                 oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" />
+                 <!--  the line above is added to prevent anything else except the number to be typed in: -->
+        </div>
+      </div>  
       <div class="ui error message"></div>
       <button class="ui black submit button">Register Candidate</button>
     </form>
@@ -49,4 +60,3 @@
 </div>
 
 <script src="@{'/public/javascripts/candidate.js'}"></script>
-<script>$('.ui.selection.dropdown').dropdown();</script>

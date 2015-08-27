@@ -32,7 +32,11 @@ Candidate(abel):
     candidateFirstName: Abel
     candidateLastName: Abamo
     candidateEmail: abel@abamo.com
+    #story11:
+    candidatePassword: secret
     office: president
+    #story12:
+    target: 5000
     donation:
              - donation01
              - donation06
@@ -45,8 +49,11 @@ Candidate(celery):
     candidateFirstName: Celery
     candidateLastName: Hilton
     candidateEmail: celery@hilton.com
+    #story11
     candidatePassword: secret
     office: vicepresident
+    #story12:
+    target: 10000
     donation:
              - donation02
              - donation05
@@ -59,15 +66,22 @@ Candidate(henry):
     candidateFirstName: Henry
     candidateLastName: Mustang
     candidateEmail: henry@mustang.com
+    #story11:
     candidatePassword: secret
     office: president
+    #story12
+    target: 20000
     
 #story06:
 Candidate(donald):
     candidateFirstName: Donald
     candidateLastName: Triumph
     candidateEmail: donald@triumph.com
+    #story11:
+    candidatePassword: secret
     office: mayor
+    #story12:
+    target: 8000
     candidatePassword: secret
     donation:
              - donation03

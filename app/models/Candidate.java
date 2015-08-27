@@ -16,6 +16,7 @@ public class Candidate extends Model
   public String candidateLastName;
   public String candidateEmail;
   public String candidatePassword;
+  public long target;           //story12
   @OneToOne                     //story11
   public Office office;
   @OneToMany
@@ -23,12 +24,13 @@ public class Candidate extends Model
   @OneToMany
   public List<Donation> donations;
 
-  public Candidate(String candidateFirstName, String candidateLastName, String candidateEmail, String candidatePassword)
+  public Candidate(String candidateFirstName, String candidateLastName, String candidateEmail, String candidatePassword, long target)
   {
     this.candidateFirstName = candidateFirstName;
     this.candidateLastName = candidateLastName;
     this.candidateEmail = candidateEmail;
     this.candidatePassword = candidatePassword;
+    this.target = target;      //story12
   }
   //story11
   public void addOffice(Office office)

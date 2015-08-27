@@ -47,7 +47,7 @@
   <div class="ui progress" id="progress">
     <div class="lightgreen bar"></div>
     <div class="progress"></div>
-    <div class="label">${donationprogress} % target achieved</div>
+    <div class="label">${donationprogress} % of the target amount $ ${candidate.target} achieved</div>          <!-- story12 -->
   </div>
 <!-- end of progress bar -->
 <!-- filter buttons: -->
@@ -139,5 +139,5 @@
 </div>
 <script src="@{'/public/javascripts/report.js'}"></script>
 <script>
-  $('#progress').progress('increment', '${donationprogress}');
+  $('#progress').progress('increment', '${donationprogress}');                       
 </script>

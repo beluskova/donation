@@ -18,9 +18,10 @@
           <label> Office Title: </label> <input type="text" name="office.title" placeholder="Office Title">
         </div>
         <div class="required field">
-          <label> Office Phone Number: </label> <input type="text" name="office.phone" placeholder="Office Phone Number"
-          oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" />
-              <!--  the line above is added to prevent anything else except the number to be typed in: -->
+          <label> Office Phone Number: </label> 
+          <input type="text" name="office.phone" placeholder="Office Phone Number"
+                 oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" />
+                 <!--  the line above is added to prevent anything else except the number to be typed in: -->
         </div>
       </div>
       <div class="field">
