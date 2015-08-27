@@ -11,6 +11,7 @@ import play.test.*;
 import play.db.jpa.Blob;
 import models.*;
 
+
 @OnApplicationStart
 public class Bootstrap extends Job
 {

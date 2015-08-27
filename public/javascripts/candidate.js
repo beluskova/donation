@@ -1,9 +1,10 @@
 //story11: Creating a new office
+
 $('.ui.form').form({
 	candidateFirstName : {
 		identifier : 'candidate.candidateFirstName',
 		rules : [ {
-			type : 'email',
+			type : 'empty',
 			prompt : 'Please enter first name'
 		} ]
 	},

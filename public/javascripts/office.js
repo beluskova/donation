@@ -12,6 +12,13 @@ $('.ui.form').form({
 		rules : [ {
 			type : 'empty',
 			prompt : 'Please enter phone number'
-		} ]
-	},
+		} 
+		]
+	}
+},
+{
+  inline: true,
+  on: 'blur',
+  transition: 'fade down', 
 });
+

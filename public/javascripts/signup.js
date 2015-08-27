@@ -1,6 +1,6 @@
 $('.ui.form').form({
-  firstName : {
-		identifier : 'firstName',
+	firstName : {
+		identifier : 'user.firstName',
 		rules : [ {
 			type : 'empty',
 			prompt : 'Please enter your name'
@@ -8,7 +8,7 @@ $('.ui.form').form({
 	},
 	// story01: age can be only valid integer between 0 and 110
 	age : {
-		identifier : 'age',
+		identifier : 'user.age',
 		rules : [ {
 			type : 'integer[0..110]',
 			prompt : 'Please enter a valid age'
@@ -16,14 +16,14 @@ $('.ui.form').form({
 	},
 	//
 	email : {
-		identifier : 'email',
+		identifier : 'user.email',
 		rules : [ {
 			type : 'email',
 			prompt : 'Please enter a valid email address'
 		} ]
 	},
 	password : {
-		identifier : 'password',
+		identifier : 'user.password',
 		rules : [ {
 			type : 'empty',
 			prompt : 'Please enter a password'
@@ -31,7 +31,11 @@ $('.ui.form').form({
 			type : 'length[6]',
 			prompt : 'Your password must be at least 6 characters'
 		} ]
-	},
+	}
+}, {
+	inline : true,
+	on : 'blur',
+	transition : 'fade down',
 });
 
 $('.ui.checkbox').checkbox();
@@ -40,16 +44,12 @@ $('.ui.checkbox').checkbox();
 var $checkBox = $('#usCitizen'), $select = $('#state');
 
 $checkBox.on('change', function(e) {
-	if ($(this).is(':checked')) 
-	{
+	if ($(this).is(':checked')) {
 		$select.removeAttr('disabled');
-	} 
-	else
-	{
+	} else {
 		$select.attr('disabled', 'disabled');
 	}
 });
 
 //story06
 $('.ui.selection.dropdown').dropdown();
-

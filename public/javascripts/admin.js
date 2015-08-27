@@ -15,4 +15,9 @@ $('.ui.form').form({
 			prompt : 'Please enter correct Password'
 		}]
 	}
+},
+	{
+	  inline: true,
+	  on: 'blur',
+	  transition: 'fade down',
 });
