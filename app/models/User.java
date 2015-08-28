@@ -3,13 +3,13 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import play.db.jpa.Model;
+
 
 @Entity
 public class User extends Model
 {
-  public boolean usCitizen;
+  //public boolean usCitizen;
   public String firstName;
   public String lastName;
   public String age; // story01
@@ -20,14 +20,18 @@ public class User extends Model
   public String addrLine2; // story05
   public String city; // story05
   public String zipcode; // story05
+  public boolean usCitizen;
   @ManyToOne        // story06:
   public Candidate candidate;
+  public double latitude;   //story13
+  public double longitude;  //story13
 
   // story01: age and state added here
   // story05: addrLine1, addrLine2, city, zipcode added here
   // story09: Candidate candidate removed
+  // story13: Geolocation's latitude and longitude added
   public User(boolean usCitizen, String firstName, String lastName, String age, String email, String password,
-              String state, String addrLine1, String addrLine2, String city, String zipcode)
+              String state, String addrLine1, String addrLine2, String city, String zipcode, double latitude, double longitude)
   {
     this.usCitizen = usCitizen;
     this.firstName = firstName;
@@ -40,6 +44,8 @@ public class User extends Model
     this.addrLine2 = addrLine2; // story05
     this.city = city; // story05
     this.zipcode = zipcode; // story05
+    this.latitude = latitude;   //story13
+    this.longitude = longitude;  //story13
   }
 
   public static User findByEmail(String email)

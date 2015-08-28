@@ -84,6 +84,16 @@
 	font-family: sans-serif;
 }
 
+.sigmar6 {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 1.2em;
+    font-family: sans-serif;
+    text-align: left;
+    padding-bottom:-150px;
+}
+
+
 .navlink {
 	font-weight: bold;
 	color: #ffffff;

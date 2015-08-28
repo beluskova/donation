@@ -6,6 +6,8 @@ import play.mvc.*;
 
 import java.util.*;
 
+import org.json.simple.JSONArray;
+
 import models.*;
 
 public class DonationController extends Controller
@@ -28,9 +30,11 @@ public class DonationController extends Controller
     {
       User user = User.findById(Long.parseLong(userId));
       List<Candidate> candidates = Candidate.findAll(); // story09
-      // Logger.info("Donation controller: user is " + user.email); //displaying twice
+      // Logger.info("Donation controller: user is " + user.email); //displaying
+      // twice
       // String donationprogress = getPercentTargetAchieved();
-      // render(user, donationprogress); // the actual progress is displayed with a help of a progress bar
+      // render(user, donationprogress); // the actual progress is displayed
+      // with a help of a progress bar
       render(user, candidates);
     }
   }
@@ -47,11 +51,12 @@ public class DonationController extends Controller
     {
       User user = User.findById(Long.parseLong(userId));
       Candidate candidate = Candidate.findByEmail(candidateEmail); // story09
-      //Candidate candidate = user.candidate;                      //story07 
+      // Candidate candidate = user.candidate; //story07
       addDonation(user, amountDonated, methodDonated, candidate); // story07
       Logger.info("amount donated: " + amountDonated + " " + "method donated: " + methodDonated + "\n for candidate: "
           + candidate.candidateFirstName + " " + candidate.candidateLastName);
-      // getPercentTargetAchieved(); // calling a helping method to display the progress bar correctly
+      // getPercentTargetAchieved(); // calling a helping method to display the
+      // progress bar correctly
       index();
     }
     else
@@ -72,6 +77,26 @@ public class DonationController extends Controller
     bal.save();
   }
 
+  /**
+   * a new method created for story13:
+   * A method to display all Geolocations of users on the map (their first names
+   * and coordinates). The method goes through list of all users, selecting only
+   * their first name and coordinates to the new JSON array list.
+   * 
+   */
+  public static void listGeolocations()
+  {
+    {
+      JSONArray listGeolocations = new JSONArray();
+      List<User> users = User.findAll();
+      for (User user : users)
+      {
+        listGeolocations.add(Arrays.asList(user.firstName, user.latitude, user.longitude));
+      }
+      renderJSON(listGeolocations);
+    }
+  }
+}
   // story09: obsolete methods:
   /*  *//**
    * A helping method to set the target amount.
@@ -120,4 +145,5 @@ public class DonationController extends Controller
    * candidates); } else { Logger.info("User not logged in"); Accounts.login();
    * } }
    */
-}
+
+

@@ -16,69 +16,97 @@
     <h4>Please give generously</h4>
 <!-- donation segment -->
     <form action="/donation/donate" method="POST" class="ui form segment">
-      <div class="ui three column grid">
-        <div class="six wide column">
-          <img class="ui tiny left floated jumping picture image" src="/public/images/statue of liberty2.jpg">
-     <!--  story09: candidate selection dropdown -->
-                        <div class="ui basic compact horizontal segment">
-               <div class="five wide field">
-            <label>Candidate</label>
-            <div class="ui selection dropdown">
-            <input name="candidateEmail" type="hidden"> 
-              <i class="dropdown icon"></i>
-              <div class="default text">Select Candidate</div>
-              <div class="menu">
-                #{list items: candidates, as: 'candidate'}
-                <div class="item" data-value="${candidate.candidateEmail}"> 
-                ${candidate.candidateFirstName} ${candidate.candidateLastName}
-                </div>
-                #{/list}
-              </div>
-            </div>
+      <div class="ui grid">
+        <div class="ui four column grid">
+          <div class="one wide center aligned column">
+            <img class="ui tiny centered jumping picture image" src="/public/images/statue of liberty2.jpg">
           </div>
+<!--  story09: candidate selection dropdown -->
+          <div class="three wide column">
+            <div class="ui basic compact horizontal segment">
+              <div class="five wide field">
+                <label>Candidate</label>
+                <div class="ui selection dropdown">
+                  <input name="candidateEmail" type="hidden"> <i class="dropdown icon"></i>
+                  <div class="default text">Select Candidate</div>
+                  <div class="menu">
+                    #{list items: candidates, as: 'candidate'}
+                    <div class="item" data-value="${candidate.candidateEmail}">
+                      ${candidate.candidateFirstName}
+                      ${candidate.candidateLastName}</div>
+                    #{/list}
+                  </div>
+                </div>
+              </div>
 <!-- story09: candidate selection dropdown -->
 <!-- amount dropdown menu  -->
               <div class="five wide field">
-            <label>Amount:</label>
-            <div class="ui selection dropdown">
-              <input name="amountDonated" type="hidden"> <i class="dropdown icon"></i>
-              <div class="default text">Select amount</div>
-              <div class="menu">
-                <div class="item" data-value="100">$100</div>
-                <div class="item" data-value="500">$500</div>
-                <div class="item" data-value="1000">$1000</div>
+                <label>Amount:</label>
+                <div class="ui selection dropdown">
+                  <input name="amountDonated" type="hidden"> <i class="dropdown icon"></i>
+                  <div class="default text">Select amount</div>
+                  <div class="menu">
+                    <div class="item" data-value="100">$100</div>
+                    <div class="item" data-value="500">$500</div>
+                    <div class="item" data-value="1000">$1000</div>
+                  </div>
+                </div>
               </div>
+              <button class="ui lightgreen bottom attached submit button">
+                <i class="gift icon"></i> Donate
+              </button>
+              <div class="ui error message"></div>                             <!--  if donate.js conditions for form are not met -->
             </div>
-            </div>
-            <button class="ui lightgreen bottom attached submit button">
-              <i class="gift icon"></i> Donate
-            </button>
-<!-- error message pops up when no amount is selected -->
-            <div class="ui error message"></div>
           </div>
-        </div>
 <!-- payment method -->
-        <div class="column">
-          <div class="ui basic horizontal segment">
-            <div class="label">Select a payment method:</div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input name="methodDonated" value="paypal" checked="checked" type="radio">
-                <label for="methodDonated"> <i class="paypal icon"></i> Paypal
-                </label>
+          <div class="three wide column">
+            <div class="ui basic horizontal segment">
+              <div class="label">Select a payment method:</div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input name="methodDonated" value="paypal" checked="checked" type="radio"> 
+                  <label for="methodDonated"> 
+                  <i class="paypal icon"></i> Paypal
+                  </label>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input name="methodDonated" value="direct" type="radio">
-                <label for="methodDonated"> <i class="money icon"> </i>Direct
-                </label>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input name="methodDonated" value="direct" type="radio"> 
+                  <label for="methodDonated">
+                    <i class="money icon"> </i>Direct
+                  </label>
+                </div>
               </div>
             </div>
           </div>
+<!--  story13: map of all users -->
+          <div class="eight wide column">
+            <section class="ui segment">
+              <h4>Markers represent Donor's locations: click to discover name:</h4>
+              <br>
+              <div id="googleMap" style="width: 100%; height: 400px;">
+                <table class="ui segment">
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th>GPS(latitude, longitude)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+<!-- end of users (donors) map -->
         </div>
       </div>
     </form>
+  </div>
+</div>
 <!-- end of donation segment -->
 <!-- story09: progress bar removed from Donation page  -->
 <!--     <h4>Amount donated to support Homer for president:</h4>
@@ -89,9 +117,11 @@
       <div class="label">${donationprogress} % target achieved</div>
     </div>
 <!-- end of progress bar -->
-  </div>
+</div>
 </div>
 <script src="@{'/public/javascripts/donate.js'}"></script>
 <script>
 	$('#progress').progress('increment', '${donationprogress}');
 </script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="@{'/public/javascripts/map.js'}" type="text/javascript" charset="${_response_encoding}"></script>

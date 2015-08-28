@@ -103,7 +103,10 @@ User(homer):
     addrLine1: Simsonville
     addrLine2: 3 Orchard Drive
     city: Manhattan
-    zipcode: 025N Y264
+    zipcode: NY 10036
+    #story13:
+    latitude: 40.7053949
+    longitude: -73.9810543
     candidate: abel 
     donation: donation01, donation06
         
@@ -120,7 +123,10 @@ User(marge):
     addrLine1: Margeville
     addrLine2: 265 Belvedere Road
     city: Lawton
-    zipcode: 026L W65
+    zipcode: OK 73501
+     #story13:
+    latitude: 34.6027604
+    longitude: -98.4254199
     candidate: celery
     donation: donation05
     
@@ -137,7 +143,10 @@ User(lisa):
     addrLine1: Lisa's House
     addrLine2: 78 Lovely View
     city: Norfolk
-    zipcode: 028N F78
+    zipcode: NE 68701
+    #story13:
+    latitude: 42.0312514
+    longitude: -97.423235
     candidate: donald
     donation: donation04
     
@@ -154,7 +163,10 @@ User(bart):
     addrLine1: Bartysdole
     addrLine2: 366 Green Meadow
     city: Buffalo
-    zipcode: 36B F99
+    zipcode: WY 82834
+    #story13:
+    latitude: 44.3446509
+    longitude: -106.706422
     candidate: donald
     donation: donation03
     
@@ -171,7 +183,10 @@ User(maggie):
     addrLine1: Simsonville
     addrLine2: 56 Masons Avenue
     city: Oueens
-    zipcode: 025N Y367
+    zipcode: NY 11201
+    #story13:
+    latitude: 40.747358
+    longitude: -72.9290622
     candidate: celery
     donation: donation02
     

@@ -1,7 +1,9 @@
 package controllers;
 import java.util.List;
+
 import play.*;
 import play.mvc.*;
+import utils.LatLng;
 import models.*;
 
 public class Accounts extends Controller
@@ -40,7 +42,7 @@ public class Accounts extends Controller
   //story01: age and state added here
   //story05: the register form has changed
   //story06: candidate added
-  public static void register (User user,String candidateEmail)
+  public static void register (User user, String candidateEmail, double latitude, double longitude)
       {
        /*  story05: obsolete code 
     * Logger.info("New user: " + usCitizen + " " + firstName + " " + lastName +  " " + age + " " + email + " " + password + " "         
@@ -54,11 +56,16 @@ public class Accounts extends Controller
     {
       user.state = "Not US Citizen";
     }
+    user.latitude = latitude;
+    user.longitude = longitude;
     user.save();                                 //story06
     Logger.info("Registration successful");
     session.put("logged_in_userid", user.id);
+    Geolocation g = new Geolocation (user, latitude, longitude);
+    g.save();
     DonationController.index();
   }
+ 
   
   /**
    * A method loads the login page whenever the login button is clicked-on.

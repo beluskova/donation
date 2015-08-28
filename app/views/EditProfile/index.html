@@ -18,58 +18,62 @@
             <div class="four wide field">
               <label>First Name</label>
               <div class="ui input focus">
-                <input type="text" name="firstName" value=${user.firstName}>
+                <input type="text" name="firstName" value="${user.firstName}">
               </div>
             </div>
             <div class="four wide field">
               <label>Last Name</label>
               <div class="ui input focus">
-                <input type="text" name="lastName" value=${user.lastName}>
+                <input type="text" name="lastName" value="${user.lastName}">
               </div>
             </div>
 <!-- age field - story01 -->
             <div class="two wide field">
               <label>Age</label>
               <div class="ui input focus">
-                <input type="text" name="age" value=${user.age}>
+                <input type="text" name="age" value="${user.age}">
               </div>
             </div>
 <!-- end of age field -->
           </div>
           <div class="two fields">
             <div class="four wide field">
-              <label>Address Line 1</label>                                                     <!-- story05  -->
+              <label>Address Line 1</label>
+<!-- story05  -->
               <div class="ui input focus">
-                <input type="text" name="addrLine1" value=${user.addrLine1}>
+                <input type="text" name="addrLine1" value="${user.addrLine1}">
               </div>
             </div>
             <div class="four wide field">
-              <label>Address Line 2</label>                                                     <!-- story05  -->
+              <label>Address Line 2</label>
+<!-- story05  -->
               <div class="ui input focus">
-                <input type="text" name="addrLine2" value=${user.addrLine2}>
+                <input value="${user.addrLine2}" type="text" name="addrLine2">
               </div>
             </div>
           </div>
           <div class="two fields">
             <div class="four wide field">
-              <label>City</label>                                                               <!-- story05  -->
+              <label>City</label>
+<!-- story05  -->
               <div class="ui input focus">
-                <input type="text" name="city" value=${user.city}>
+                <input type="text" name="city" value="${user.city}">
               </div>
             </div>
             <div class="three wide field">
-              <label>Zipcode</label>                                                            <!-- story05  -->
+              <label>Zipcode</label>
+<!-- story05  -->
               <div class="ui input focus">
-                <input type="text" name="zipcode" value=${user.zipcode}>
+                <input type="text" name="zipcode" value="${user.zipcode}">
               </div>
             </div>
-          </div> 
+          </div>
           <div class="four wide field">
             <label>State</label>
             <div class="ui input focus">
 <!-- state selection dropdown -->
               <select class="ui dropdown" id="state" name="state">
-                <option value="${user.state}">${user.state}</option>     <!-- This will show an already saved state for the user -->
+                <option value="${user.state}">${user.state}</option>       <!-- This will show an already saved state for the user -->
                 <option value="">State</option>
                 <option value="Alabama">Alabama</option>
                 <option value="Alaska">Alaska</option>
@@ -126,25 +130,35 @@
 <!-- end of state selection dropdown -->
             </div>
           </div>
-          <div class="ui floating1 error message"></div>                        <!--  if edit.js conditions for form are not met -->
+<!-- story13: edit geolocation: -->
+          <div class="two fields">
+            <div class="seven wide field">
+              <label>Latitude</label> <input type="text" value=${user.latitude} name="user.latitude">
+            </div>
+            <div class="seven wide field">
+              <label>Longitude</label> <input type="text" value=${user.longitude} name="user.longitude">
+            </div>
+          </div>
+<!-- story13: end of geolocation fields -->
+          <div class="ui floating1 error message"></div>                           <!--  if edit.js conditions for form are not met -->
         </div>
         <div class="three wide center aligned column" style="margin-top: -70px">
           <div class="ui label1 label">
             <h3 class="sigmar4">Save my new details</h3>
-            <button class="ui black submit button">Edit</button>                                     <!-- new details are saved  -->
+            <button class="ui black submit button">Edit</button>                                        <!-- new details are saved  -->
           </div>
           <div class="ui label1 label">
             <h3 class="sigmar4">Display my saved details</h3>
-            <button class="ui lightgreen reset button">Reset</button>        <!-- all details are reset to their original value  -->
+            <button class="ui lightgreen reset button">Reset</button>           <!-- all details are reset to their original value  -->
           </div>
           <div class="ui label1 label">
             <h3 class="sigmar4">Clear all fields</h3>
-            <button class="ui lightgreen clear button">Clear</button>                           <!-- all form fields are cleared -->
+            <button class="ui lightgreen clear button">Clear</button>                              <!-- all form fields are cleared -->
           </div>
           <div class="ui label1 label">
             <h3 class="sigmar4">Return to Donation page</h3>
             <div class="ui lightgreen button">
-              <a href="/donation"> Cancel </a>                                                  <!-- return to the Donation page -->
+              <a href="/donation"> Cancel </a>                                                     <!-- return to the Donation page -->
             </div>
           </div>
         </div>

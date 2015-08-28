@@ -1,12 +1,9 @@
 #{extends 'main.html' /} #{set title:'Signup for Donation' /}
 <!-- navigation bar  -->
-<div class="ui inverted right fixed pointing labeled icon vertical menu"
-  style="padding-left: 20px">
-  <a class="ui item" href="/home"> <i class="huge home icon"> </i>
-    Home
-  </a> <a class="ui active item" href="/signup"><i class="user icon">
-  </i> SignUp</a> <a class="ui item" href="/login"><i class="lock icon">
-  </i> Log In</a>
+<div class="ui inverted right fixed pointing labeled icon vertical menu" style="padding-left: 20px">
+  <a class="ui item" href="/home"> <i class="huge home icon"> </i>Home </a> 
+  <a class="ui active item" href="/signup"><i class="user icon"></i> SignUp</a> 
+  <a class="ui item" href="/login"><i class="lock icon"></i> Log In</a>
   <!-- <a class="ui item" href="/donation"><i class="gift icon"> </i> Make Donation</a>                              story04  -->
   <!-- <a class="ui item" href="/donation/report"><i class="bar chart icon"></i> Report </a>                         story04  -->
   <!-- <a class="ui item" href="/logout"><i class="sign out icon"> </i> Sign Out</a>                                 story04  -->
@@ -22,7 +19,7 @@
 <div class="ui grid">
   <div class="sixteen wide center aligned column">
     <div class="bodybasic2">
-      <!-- signup form -->
+<!-- signup form -->
       <div class="ui inverted lightgreen form segment" style="padding-top: 30px">
         <form class="ui form" action="/register" method="POST" name="register">
           <div class="inline field">
@@ -36,30 +33,42 @@
             </div>
           </div>
           <div class="three fields">
+            <h3 class="sigmar6">Your personal details:</h3>
             <div class="six wide required field">
-              <label>First Name</label> <input placeholder="First Name" type="text" name="user.firstName">
+              <label>First Name</label> 
+              <input placeholder="First Name" type="text" name="user.firstName">
             </div>
             <div class="six wide field">
-              <label>Last Name</label> <input placeholder="Last Name" type="text" name="user.lastName">
+              <label>Last Name</label> 
+              <input placeholder="Last Name" type="text" name="user.lastName">
             </div>
 <!-- age field - story01 -->
-            <div class="two wide field">
-              <label>Age</label> <input placeholder="Age" type="text" name="user.age">
+            <div class="two wide required field">
+              <label>Age</label> 
+              <input placeholder="Age" type="text" name="user.age">
             </div>
 <!-- end of age field -->
           </div>
           <div class="four fields">
-            <div class="four wide field">                                                                      <!-- story05  -->
-              <label>Address Line 1</label> <input placeholder="Address Line 1" type="text" name="user.addrLine1">
+            <div class="four wide field">
+<!-- story05  -->
+              <label>Address Line 1</label> 
+              <input placeholder="Address Line 1" type="text" name="user.addrLine1">
             </div>
-            <div class="four wide field">                                                                      <!-- story05  -->
-              <label>Address Line 2</label> <input placeholder="Address Line 2" type="text" name="user.addrLine2">
+            <div class="four wide field">
+<!-- story05  -->
+              <label>Address Line 2</label> 
+              <input placeholder="Address Line 2" type="text" name="user.addrLine2">
             </div>
-            <div class="four wide field">                                                                      <!-- story05  -->
-              <label>City</label> <input placeholder="City" type="text" name="user.city">
+            <div class="four wide field">
+<!-- story05  -->
+              <label>City</label> 
+              <input placeholder="City" type="text" name="user.city">
             </div>
-            <div class="two wide field">                                                                       <!-- story05  -->
-              <label>Zipcode</label> <input placeholder="Zip code" type="text" name="user.zipcode">
+            <div class="two wide field">
+<!-- story05  -->
+              <label>Zipcode</label> 
+              <input placeholder="Zip code" type="text" name="user.zipcode">
             </div>
           </div>
 <!--  state selection dropdown - story01 -->
@@ -139,6 +148,7 @@
           </div>
 <!-- end of candidate selection dropdown  -->
           <div class="two fields" style="padding-top: 40px">
+            <h3 class="sigmar6" style="padding-bottom: -150px">Your email and password:</h3>
             <div class="seven wide required field">
               <label>Email</label> <input placeholder="Email" type="text" name="user.email">
             </div>
@@ -146,7 +156,19 @@
               <label>Password</label> <input placeholder="Password" type="Password" name="user.password">
             </div>
           </div>
-          <div class="ui floating error message"></div>
+<!-- story13: add geolocation: -->
+          <div class="two fields" style="padding-top: 40px">
+            <h3 class="sigmar6">Add your geolocation:</h3>
+            <div class="seven wide field">
+              <label>Latitude</label> 
+              <input placeholder="Example: 44.008620" type="text" name="latitude">
+            </div>
+            <div class="seven wide field">
+              <label>Longitude</label> 
+              <input placeholder="Example: -123.074341" type="text" name="longitude">
+            </div>
+          </div>
+<!-- story13: end of geolocation fields -->
           <h2 class="ui red tiny header">Fields marked with * are mandatory</h2>
           <div class="ui black submit button">Submit</div>
         </form>
