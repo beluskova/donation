@@ -15,9 +15,31 @@ $('.ui.form').form({
 			prompt : 'Please select an amount to donate'
 		} ]
 	}
+},
+{
+  onSuccess : function() {
+      submitForm();
+      return false;
+  } 
 });
 
-$('.jumping.picture').transition('swing up', '2000ms')
-                     .transition('swing down','2000ms')
-                     .transition('fade up', '2000ms')
-                     .transition('fade in', '2000ms');
+//story14: avoid page flicker
+function submitForm() {
+var formData = $('.ui.form input').serialize(); 
+$.ajax({
+  type: 'POST',
+  url: '/donation/donate',
+  data: formData,
+  success: function(response) { 
+     $('#notification').text("Thank you for your donation");
+  }
+});
+$('.form').trigger("reset");
+}
+
+
+$('.jumping.picture')
+.transition('swing up', '2000ms')
+.transition('swing down','2000ms')
+.transition('fade up', '2000ms')
+.transition('fade in', '2000ms');

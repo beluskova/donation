@@ -174,3 +174,13 @@
 	background-color: #AAB89C !important;
 	color: #000000 !important;
 }
+
+#notification {
+	color:  #AAB89C!important;
+	font-weight: bold;
+	font-size: 1.4em;
+	font-style: italic;
+	font-family: sans-serif;
+	padding-top: 100px;
+	text-align: center;
+}

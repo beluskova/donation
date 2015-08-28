@@ -11,11 +11,12 @@
 </div>
 <!-- welcoming text -->
 <div class="bodybasic3">
-  <div class="ui segment">
+  <section class="ui segment">
     <h1 class="ui header">Welcome ${user.firstName}</h1>
     <h4>Please give generously</h4>
 <!-- donation segment -->
-    <form action="/donation/donate" method="POST" class="ui form segment">
+    <!-- <form action="/donation/donate" method="POST" -->                                                          <!-- story14 -->                         
+   <form class="ui form">
       <div class="ui grid">
         <div class="ui four column grid">
           <div class="one wide center aligned column">
@@ -56,6 +57,7 @@
                 <i class="gift icon"></i> Donate
               </button>
               <div class="ui error message"></div>                             <!--  if donate.js conditions for form are not met -->
+              <div id="notification"></div>
             </div>
           </div>
 <!-- payment method -->
@@ -105,8 +107,6 @@
         </div>
       </div>
     </form>
-  </div>
-</div>
 <!-- end of donation segment -->
 <!-- story09: progress bar removed from Donation page  -->
 <!--     <h4>Amount donated to support Homer for president:</h4>
@@ -117,7 +117,7 @@
       <div class="label">${donationprogress} % target achieved</div>
     </div>
 <!-- end of progress bar -->
-</div>
+</section>
 </div>
 <script src="@{'/public/javascripts/donate.js'}"></script>
 <script>
