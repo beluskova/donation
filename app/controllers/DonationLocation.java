@@ -24,9 +24,7 @@ public class DonationLocation extends Controller
    */
   public static void index()
   {
-    String adminId = session.get("logged_in_adminid"); // to display page to
-                                                       // logged-in
-                                                       // administrator only
+    String adminId = session.get("logged_in_adminid"); // to display page to logged-in administrator only
     if (adminId == null)
     {
       Logger.info("Donor Location: Administrator not logged-in");

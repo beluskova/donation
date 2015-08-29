@@ -7,16 +7,37 @@
 </div>
 <div class="bodybasic4">
   <section class="ui raised segment">
-    <h3 class="sigmar5">Donor location:</h3>
-    <div id="googleMap" style="width: 100%; height: 400px;"></div>
-    <div class="ui buttons">
-      <button class="ui lightgreen1 button" onclick="start()">Start</button>
-      <button class="ui lightgreen1 button" onclick="stop()">Stop</button>
-      <button class="ui lightgreen1 button" onclick="filter()">Filter</button>
-      <button class="ui lightgreen1 button" onclick="reset()">Reset</button>
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h3 class="sigmar5">Donor location:</h3>
+        <div id="googleMap" style="width: 100%; height: 400px;"></div>
+        <div class="ui buttons">
+          <button class="ui lightgreen1 button" onclick="start()">Start</button>
+          <button class="ui lightgreen1 button" onclick="stop()">Stop</button>
+          <button class="ui lightgreen1 button" onclick="filter()">Filter</button>
+          <button class="ui lightgreen1 button" onclick="reset()">Reset</button>
+        </div>
+      </div>
+<!-- story16: list all donors in the table -->
+      <div class="eight wide column">
+        <h3 class=sigmar5>Donor details:</h3>
+        <table class="ui table segment">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>GPS(latitude, longitude)</th>
+            </tr>
+          </thead>
+          <tbody id="usertable">
+            <tr>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+<!-- end of the donors table -->
   </section>
 </div>
 
 <script src="http://maps.googleapis.com/maps/api/js"></script>
-<script src="@{'public/javascripts/donorlocation.js'}"></script>
+<script src="@{'public/javascripts/filterlocation.js'}"></script>
