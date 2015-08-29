@@ -19,6 +19,7 @@ $('.ui.form').form({
 {
   inline: true,
   on: 'blur',
-  transition: 'fade down', 
+  transition: 'fade down',
+  }
 });
 

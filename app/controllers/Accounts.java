@@ -52,6 +52,9 @@ public class Accounts extends Controller
     * Candidate candidate = Candidate.findByEmail(candidateEmail);
     user.addCandidate(candidate);                //story06
     */   
+    User user1 = User.findByEmail(user.email);
+    if (user1 == null)
+    {
     if (user.state == null)                      //to search for users who are not registered in any US State
     {
       user.state = "Not US Citizen";
@@ -64,6 +67,12 @@ public class Accounts extends Controller
     Geolocation g = new Geolocation (user, latitude, longitude);
     g.save();
     DonationController.index();
+    }
+    else
+    {
+      Logger.info("User already exists");
+      Welcome.index();
+    }
   }
  
   

@@ -10,8 +10,8 @@ $('.ui.form').form({
 	age : {
 		identifier : 'user.age',
 		rules : [ {
-			type : 'integer[0..110]',
-			prompt : 'Please enter a valid age'
+			type : 'integer[18..110]',   //
+			prompt : 'Please enter a valid age - you must be at least 18 years old'
 		} ]
 	},
 	//

@@ -131,7 +131,7 @@ public class Administrator extends Controller
       {
         Logger.info("Candidate " + candidate.candidateFirstName + " " + candidate.candidateLastName
                    + " is already registered");
-        index();
+        render("Administrator/registerCandidate.html");
       }
       else
       {

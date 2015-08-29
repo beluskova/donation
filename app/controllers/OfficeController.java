@@ -59,7 +59,7 @@ public class OfficeController extends Controller
       if (office1 != null)                                                     //checking whether Office already exists
       {
         Logger.info("Office " + office1.title + " already registered");
-        index();
+        OfficeController.index();
       }
     else
     {
