@@ -39,6 +39,10 @@ POST   /admin/register                          Administrator.registerCandidate
 GET    /office                                  OfficeController.index
 POST   /createOffice                            OfficeController.createOffice
 
+#Donor Location
+GET    /donorlocation                           DonationLocation.index
+GET    /donorlocation/locations                 DonationLocation.listGeolocations
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

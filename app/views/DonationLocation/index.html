@@ -1,0 +1,22 @@
+ #{extends 'main.html' /} #{set title:'Donor Location' /}
+ <!-- a new view created for Story15: displaying location of all Donors  for Administrator only -->
+<!-- navigation bar  -->
+<div class="ui inverted right fixed pointing labeled icon vertical menu" style="padding-left: 20px">
+  <a class="ui item" href="/admin/home"><i class="area chart icon"></i> Admin Home </a> 
+  <a class="ui active item" href="/donorlocation"><i class="world icon"> </i> Donor Location</a> 
+</div>
+<div class="bodybasic4">
+  <section class="ui raised segment">
+    <h3 class="sigmar5">Donor location:</h3>
+    <div id="googleMap" style="width: 100%; height: 400px;"></div>
+    <div class="ui buttons">
+      <button class="ui lightgreen1 button" onclick="start()">Start</button>
+      <button class="ui lightgreen1 button" onclick="stop()">Stop</button>
+      <button class="ui lightgreen1 button" onclick="filter()">Filter</button>
+      <button class="ui lightgreen1 button" onclick="reset()">Reset</button>
+    </div>
+  </section>
+</div>
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="@{'public/javascripts/donorlocation.js'}"></script>

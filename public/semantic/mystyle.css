@@ -184,3 +184,9 @@
 	padding-top: 100px;
 	text-align: center;
 }
+
+.ui.lightgreen1.button {
+	background-color: #AAB89C !important;
+	color: #000000 !important;
+	margin: 2px;
+}
